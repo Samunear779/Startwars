@@ -15,9 +15,8 @@ namespace Startwars
     {
         Font drawFont = new Font("Arial", 12, FontStyle.Bold);
         SolidBrush drawBrush = new SolidBrush(Color.LimeGreen);
-        Pen drawPen = new Pen(Color.White, 5);
+        Pen drawPen = new Pen(Color.White, 2);
         int BombY;
-        int bombX = 200;
         int x;
 
         public Form1()
@@ -32,7 +31,7 @@ namespace Startwars
             titleLabel2.Visible = false;
 
             fg.DrawString("Welcome Adveturer, your task is to destroy the\n death star. It's pretty simple  ", drawFont, drawBrush, 20, 40);
-            Thread.Sleep(1000);
+            Thread.Sleep(100);
 
             int y = 10;
             int x = 450;
@@ -53,17 +52,23 @@ namespace Startwars
                     fg.DrawEllipse(drawPen, x, y, 50, 25);
                     BombY++;
                 }
+
                 Thread.Sleep(10);
 
             }
-            for (int bombX = 1; x < 200; bombX++)
+
+            for (int bombX = 1; x <= 200; bombX = bombX + 2)
             {
-                //act
                 fg.Clear(Color.Black);
-                //fg.FillEllipse(drawBrush, 190 + bombX/2, 200 + bombX/2, 10 + x, 10 + x);  
-                fg.FillEllipse(drawBrush, 50, 75, 5 + bombX, 5 + bombX);
-                Thread.Sleep(5);
+                fg.FillEllipse(drawBrush, 200 -bombX/2, 200 - bombX/2, 5 + bombX, 5 + bombX);
+                fg.DrawEllipse(drawPen, 190 - bombX, y, 50, 25);
+                Thread.Sleep(10);
             }
+
+            fg.Clear(Color.Black);
+            fg.DrawString("Good Job You Did It ", drawFont, drawBrush, 20, 40);
+            Thread.Sleep(10000);
+
         }
     }
 }
