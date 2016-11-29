@@ -30,11 +30,12 @@ namespace Startwars
             Graphics fg = this.CreateGraphics();
             titleLabel1.Visible = false;
             titleLabel2.Visible = false;
-           
+
             fg.DrawString("Welcome Adveturer, your task is to destroy the\n death star. It's pretty simple  ", drawFont, drawBrush, 20, 40);
             Thread.Sleep(1000);
-         
+
             int y = 10;
+            int x = 450;
 
             while (x >= 190)
             {
@@ -55,14 +56,15 @@ namespace Startwars
                 Thread.Sleep(10);
 
             }
-            while(x >= this.Width)
+            for (int bombX = 1; x < 200; bombX++)
             {
-                //Make Bomb Explode 
+                //act
                 fg.Clear(Color.Black);
-                fg.DrawEllipse(drawPen, x, y, 50, 25);
-                fg.DrawEllipse(drawPen, 80, 75, 250, 250);
+                //fg.FillEllipse(drawBrush, 190 + bombX/2, 200 + bombX/2, 10 + x, 10 + x);  
+                fg.FillEllipse(drawBrush, 50, 75, 5 + bombX, 5 + bombX);
+                Thread.Sleep(5);
             }
-          
         }
     }
 }
+
