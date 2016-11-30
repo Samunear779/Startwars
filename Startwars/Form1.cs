@@ -47,7 +47,7 @@ namespace Startwars
 
             int y = 10;
             int x = 450;
-          
+
             while (x >= 190)
             {
                 //loop for the ship moving to the drop site
@@ -67,9 +67,8 @@ namespace Startwars
                     BombY++;
                     Thread.Sleep(10);
                 }
-               
-                Thread.Sleep(10);
 
+                Thread.Sleep(10);
             }
             theme.Stop();
             explosion.Play();
@@ -77,7 +76,7 @@ namespace Startwars
             {
                 //loop for bomb exploiding 
                 fg.Clear(Color.Black);
-                fg.FillEllipse(drawBrush, 200 -bombX/2, 200 - bombX/2, 5 + bombX, 5 + bombX);
+                fg.FillEllipse(drawBrush, 200 - bombX / 2, 200 - bombX / 2, 5 + bombX, 5 + bombX);
                 fg.DrawEllipse(drawPen, 190 - bombX, y, 50, 25);
                 Thread.Sleep(10);
             }
@@ -85,7 +84,6 @@ namespace Startwars
             fg.Clear(Color.Black);
             fg.DrawString("Good Job You Did It ", drawFont, drawBrush, 20, 40);
             Thread.Sleep(10000);
-
         }
     }
 }
