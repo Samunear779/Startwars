@@ -100,6 +100,7 @@
             this.menuButton.TabIndex = 6;
             this.menuButton.Text = "Return To Menu ";
             this.menuButton.UseVisualStyleBackColor = false;
+            this.menuButton.Visible = false;
             // 
             // Form1
             // 
