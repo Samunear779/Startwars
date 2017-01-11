@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Media;
 namespace FinalDual
 {
     public partial class Form1 : Form
@@ -15,6 +15,9 @@ namespace FinalDual
         public Form1()
         {
             InitializeComponent();  
+
+
+
         }
     }
 }
