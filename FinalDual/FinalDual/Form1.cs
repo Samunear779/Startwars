@@ -8,16 +8,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+
 namespace FinalDual
 {
     public partial class Form1 : Form
     {
+        int player1Class;
+        int player2Class;
+        int player1X;
+        int player2X;
+        int player2Y;
+        menuButton 
+
+
         public Form1()
         {
             InitializeComponent();  
+        }
 
+        private void playButton_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void howToPlayButton_Click(object sender, EventArgs e)
+        {
+            BackColor = Color.IndianRed;
+            playButton.Visible = false;
+            howToPlayButton.Visible = false;
+            titleLabel.Visible = false;
+            menuButton.Visible = true;
         }
     }
 }

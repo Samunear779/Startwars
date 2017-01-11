@@ -34,8 +34,6 @@
             this.classSelect1 = new System.Windows.Forms.TextBox();
             this.classSelect2 = new System.Windows.Forms.TextBox();
             this.menuButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -52,23 +50,25 @@
             // 
             this.howToPlayButton.BackColor = System.Drawing.Color.Silver;
             this.howToPlayButton.Font = new System.Drawing.Font("Papyrus", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.howToPlayButton.Location = new System.Drawing.Point(75, 299);
+            this.howToPlayButton.Location = new System.Drawing.Point(138, 299);
             this.howToPlayButton.Name = "howToPlayButton";
             this.howToPlayButton.Size = new System.Drawing.Size(230, 62);
             this.howToPlayButton.TabIndex = 1;
             this.howToPlayButton.Text = "How To Play";
             this.howToPlayButton.UseVisualStyleBackColor = false;
+            this.howToPlayButton.Click += new System.EventHandler(this.howToPlayButton_Click);
             // 
             // playButton
             // 
             this.playButton.BackColor = System.Drawing.Color.Silver;
             this.playButton.Font = new System.Drawing.Font("Papyrus", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playButton.Location = new System.Drawing.Point(659, 299);
+            this.playButton.Location = new System.Drawing.Point(615, 299);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(230, 62);
             this.playButton.TabIndex = 2;
             this.playButton.Text = "Play!";
             this.playButton.UseVisualStyleBackColor = false;
+            this.playButton.Click += new System.EventHandler(this.playButton_Click);
             // 
             // classSelect1
             // 
@@ -100,15 +100,7 @@
             this.menuButton.TabIndex = 6;
             this.menuButton.Text = "Return To Menu ";
             this.menuButton.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::FinalDual.Properties.Resources.swords;
-            this.pictureBox1.Location = new System.Drawing.Point(383, 158);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(226, 223);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.menuButton.Visible = false;
             // 
             // Form1
             // 
@@ -116,7 +108,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(971, 475);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.classSelect2);
             this.Controls.Add(this.classSelect1);
@@ -125,7 +116,6 @@
             this.Controls.Add(this.titleLabel);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,7 +129,6 @@
         private System.Windows.Forms.TextBox classSelect1;
         private System.Windows.Forms.TextBox classSelect2;
         private System.Windows.Forms.Button menuButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
