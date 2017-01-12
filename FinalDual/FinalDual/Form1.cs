@@ -18,8 +18,8 @@ namespace FinalDual
         int player1X;
         int player2X;
         int player2Y;
-        menuButton 
-
+        SolidBrush drawBrush = new SolidBrush(Color.Black);
+        Pen drawPen = new Pen(Color.Black, 20);
 
         public Form1()
         {
@@ -38,6 +38,13 @@ namespace FinalDual
             howToPlayButton.Visible = false;
             titleLabel.Visible = false;
             menuButton.Visible = true;
+             
+            private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            //e.Graphics.DrawString("Hello", drawFont, drawBrush, 50, 40);
+
         }
+
+      }
     }
-}
+
