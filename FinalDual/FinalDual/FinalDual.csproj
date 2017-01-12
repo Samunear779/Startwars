@@ -83,6 +83,24 @@
   <ItemGroup>
     <None Include="Resources\swords.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kevin_MacLeod_-_Hitman.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\juggernaut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

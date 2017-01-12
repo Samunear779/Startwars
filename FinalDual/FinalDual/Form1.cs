@@ -18,16 +18,25 @@ namespace FinalDual
         int player1X;
         int player2X;
         int player2Y;
-        menuButton 
-
-
+        
+        
         public Form1()
         {
             InitializeComponent();  
+
         }
 
         private void playButton_Click(object sender, EventArgs e)
         {
+            playButton.Visible = false;
+            howToPlayButton.Visible = false;
+            menuButton.Visible = true;
+            classSelect1.Visible = true;
+            classSelect2.Visible = true;
+            startbutton.Visible = true;
+            normaltank.Visible = true;
+            glasscanon.Visible = true;
+            juggernaut.Visible = true;
 
         }
 
@@ -38,6 +47,7 @@ namespace FinalDual
             howToPlayButton.Visible = false;
             titleLabel.Visible = false;
             menuButton.Visible = true;
+            pictureBox1.Visible = false;
         }
     }
 }
