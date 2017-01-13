@@ -18,7 +18,7 @@ namespace FinalDual
         int player1X;
         int player2X;
         int player2Y;
-      //nathan sucks
+      //Sam rly sucks
 
 
         public Form1()
