@@ -48,6 +48,11 @@ namespace FinalDual
             howToPlayButton.Visible = false;
             titleLabel.Visible = false;
             menuButton.Visible = true;
+             
+            private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            //e.Graphics.DrawString("Hello", drawFont, drawBrush, 50, 40);
+
         }
 
       }
