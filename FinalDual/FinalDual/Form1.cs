@@ -38,7 +38,7 @@ namespace FinalDual
             normaltank.Visible = true;
             glasscanon.Visible = true;
             juggernaut.Visible = true;
-
+            
         }
 
         private void howToPlayButton_Click(object sender, EventArgs e)
