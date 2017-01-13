@@ -35,9 +35,9 @@ namespace FinalDual
             classSelect1.Visible = true;
             classSelect2.Visible = true;
             startbutton.Visible = true;
-            normaltank.Visible = true;
-            glasscanon.Visible = true;
-            juggernaut.Visible = true;
+            normaltankpic.Visible = true;
+            glasscanonpic.Visible = true;
+            juggernautpic.Visible = true;
             
         }
 

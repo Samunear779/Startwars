@@ -35,15 +35,15 @@
             this.classSelect2 = new System.Windows.Forms.TextBox();
             this.menuButton = new System.Windows.Forms.Button();
             this.startbutton = new System.Windows.Forms.Button();
-            this.juggernaut = new System.Windows.Forms.PictureBox();
-            this.glasscanon = new System.Windows.Forms.PictureBox();
-            this.normaltank = new System.Windows.Forms.PictureBox();
+            this.juggernautpic = new System.Windows.Forms.PictureBox();
+            this.glasscanonpic = new System.Windows.Forms.PictureBox();
+            this.normaltankpic = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tank2 = new System.Windows.Forms.Label();
-            this.tank1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.juggernaut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glasscanon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.normaltank)).BeginInit();
+            this.glasscanonlable = new System.Windows.Forms.Label();
+            this.normaltanklabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.juggernautpic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glasscanonpic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.normaltankpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +51,7 @@
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Papyrus", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(357, 28);
+            this.titleLabel.Location = new System.Drawing.Point(350, 3);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(277, 151);
             this.titleLabel.TabIndex = 0;
@@ -127,37 +127,37 @@
             this.startbutton.UseVisualStyleBackColor = false;
             this.startbutton.Visible = false;
             // 
-            // juggernaut
+            // juggernautpic
             // 
-            this.juggernaut.BackColor = System.Drawing.Color.White;
-            this.juggernaut.Image = global::FinalDual.Properties.Resources.images__1_;
-            this.juggernaut.Location = new System.Drawing.Point(390, 197);
-            this.juggernaut.Name = "juggernaut";
-            this.juggernaut.Size = new System.Drawing.Size(216, 193);
-            this.juggernaut.TabIndex = 11;
-            this.juggernaut.TabStop = false;
-            this.juggernaut.Visible = false;
+            this.juggernautpic.BackColor = System.Drawing.Color.White;
+            this.juggernautpic.Image = global::FinalDual.Properties.Resources.images__1_;
+            this.juggernautpic.Location = new System.Drawing.Point(390, 197);
+            this.juggernautpic.Name = "juggernautpic";
+            this.juggernautpic.Size = new System.Drawing.Size(216, 193);
+            this.juggernautpic.TabIndex = 11;
+            this.juggernautpic.TabStop = false;
+            this.juggernautpic.Visible = false;
             // 
-            // glasscanon
+            // glasscanonpic
             // 
-            this.glasscanon.Image = global::FinalDual.Properties.Resources.download;
-            this.glasscanon.Location = new System.Drawing.Point(660, 3);
-            this.glasscanon.Name = "glasscanon";
-            this.glasscanon.Size = new System.Drawing.Size(228, 186);
-            this.glasscanon.TabIndex = 10;
-            this.glasscanon.TabStop = false;
-            this.glasscanon.Visible = false;
+            this.glasscanonpic.Image = global::FinalDual.Properties.Resources.download;
+            this.glasscanonpic.Location = new System.Drawing.Point(660, 3);
+            this.glasscanonpic.Name = "glasscanonpic";
+            this.glasscanonpic.Size = new System.Drawing.Size(228, 186);
+            this.glasscanonpic.TabIndex = 10;
+            this.glasscanonpic.TabStop = false;
+            this.glasscanonpic.Visible = false;
             // 
-            // normaltank
+            // normaltankpic
             // 
-            this.normaltank.BackColor = System.Drawing.Color.IndianRed;
-            this.normaltank.Image = global::FinalDual.Properties.Resources.images;
-            this.normaltank.Location = new System.Drawing.Point(45, 3);
-            this.normaltank.Name = "normaltank";
-            this.normaltank.Size = new System.Drawing.Size(207, 176);
-            this.normaltank.TabIndex = 9;
-            this.normaltank.TabStop = false;
-            this.normaltank.Visible = false;
+            this.normaltankpic.BackColor = System.Drawing.Color.IndianRed;
+            this.normaltankpic.Image = global::FinalDual.Properties.Resources.images;
+            this.normaltankpic.Location = new System.Drawing.Point(45, 3);
+            this.normaltankpic.Name = "normaltankpic";
+            this.normaltankpic.Size = new System.Drawing.Size(207, 176);
+            this.normaltankpic.TabIndex = 9;
+            this.normaltankpic.TabStop = false;
+            this.normaltankpic.Visible = false;
             // 
             // pictureBox1
             // 
@@ -168,28 +168,28 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // tank2
+            // glasscanonlable
             // 
-            this.tank2.AutoSize = true;
-            this.tank2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tank2.Location = new System.Drawing.Point(636, 197);
-            this.tank2.Name = "tank2";
-            this.tank2.Size = new System.Drawing.Size(292, 32);
-            this.tank2.TabIndex = 12;
-            this.tank2.Text = "2.Glass Canon:light armored tank that moes fast,\r\n hits hard, but has very low HP" +
+            this.glasscanonlable.AutoSize = true;
+            this.glasscanonlable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.glasscanonlable.Location = new System.Drawing.Point(636, 197);
+            this.glasscanonlable.Name = "glasscanonlable";
+            this.glasscanonlable.Size = new System.Drawing.Size(292, 32);
+            this.glasscanonlable.TabIndex = 12;
+            this.glasscanonlable.Text = "2.Glass Canon:light armored tank that moes fast,\r\n hits hard, but has very low HP" +
     "";
-            this.tank2.Visible = false;
+            this.glasscanonlable.Visible = false;
             // 
-            // tank1
+            // normaltanklabel
             // 
-            this.tank1.AutoSize = true;
-            this.tank1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tank1.Location = new System.Drawing.Point(42, 197);
-            this.tank1.Name = "tank1";
-            this.tank1.Size = new System.Drawing.Size(261, 32);
-            this.tank1.TabIndex = 13;
-            this.tank1.Text = "1.Normal: normal hp, damage, and speed. \r\nthis tank is the definition of average";
-            this.tank1.Visible = false;
+            this.normaltanklabel.AutoSize = true;
+            this.normaltanklabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.normaltanklabel.Location = new System.Drawing.Point(42, 197);
+            this.normaltanklabel.Name = "normaltanklabel";
+            this.normaltanklabel.Size = new System.Drawing.Size(261, 32);
+            this.normaltanklabel.TabIndex = 13;
+            this.normaltanklabel.Text = "1.Normal: normal hp, damage, and speed. \r\nthis tank is the definition of average";
+            this.normaltanklabel.Visible = false;
             // 
             // Form1
             // 
@@ -197,11 +197,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(971, 475);
-            this.Controls.Add(this.tank1);
-            this.Controls.Add(this.tank2);
-            this.Controls.Add(this.juggernaut);
-            this.Controls.Add(this.glasscanon);
-            this.Controls.Add(this.normaltank);
+            this.Controls.Add(this.normaltanklabel);
+            this.Controls.Add(this.glasscanonlable);
+            this.Controls.Add(this.juggernautpic);
+            this.Controls.Add(this.glasscanonpic);
+            this.Controls.Add(this.normaltankpic);
             this.Controls.Add(this.startbutton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuButton);
@@ -212,9 +212,9 @@
             this.Controls.Add(this.titleLabel);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.juggernaut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.glasscanon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.normaltank)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.juggernautpic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.glasscanonpic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.normaltankpic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -231,11 +231,11 @@
         private System.Windows.Forms.Button menuButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button startbutton;
-        private System.Windows.Forms.PictureBox normaltank;
-        private System.Windows.Forms.PictureBox glasscanon;
-        private System.Windows.Forms.PictureBox juggernaut;
-        private System.Windows.Forms.Label tank2;
-        private System.Windows.Forms.Label tank1;
+        private System.Windows.Forms.PictureBox normaltankpic;
+        private System.Windows.Forms.PictureBox glasscanonpic;
+        private System.Windows.Forms.PictureBox juggernautpic;
+        private System.Windows.Forms.Label glasscanonlable;
+        private System.Windows.Forms.Label normaltanklabel;
     }
 }
 
