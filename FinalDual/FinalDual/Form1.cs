@@ -18,16 +18,26 @@ namespace FinalDual
         int player1X;
         int player2X;
         int player2Y;
-        SolidBrush drawBrush = new SolidBrush(Color.Black);
-        Pen drawPen = new Pen(Color.Black, 20);
+        menuButton 
+
 
         public Form1()
         {
             InitializeComponent();  
+
         }
 
         private void playButton_Click(object sender, EventArgs e)
         {
+            playButton.Visible = false;
+            howToPlayButton.Visible = false;
+            menuButton.Visible = true;
+            classSelect1.Visible = true;
+            classSelect2.Visible = true;
+            startbutton.Visible = true;
+            normaltank.Visible = true;
+            glasscanon.Visible = true;
+            juggernaut.Visible = true;
 
         }
 
@@ -38,11 +48,6 @@ namespace FinalDual
             howToPlayButton.Visible = false;
             titleLabel.Visible = false;
             menuButton.Visible = true;
-             
-            private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            //e.Graphics.DrawString("Hello", drawFont, drawBrush, 50, 40);
-
         }
 
       }
