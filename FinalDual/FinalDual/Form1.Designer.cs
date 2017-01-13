@@ -39,8 +39,8 @@
             this.glasscanon = new System.Windows.Forms.PictureBox();
             this.normaltank = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tank2 = new System.Windows.Forms.Label();
+            this.tank1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.juggernaut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glasscanon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.normaltank)).BeginInit();
@@ -168,27 +168,28 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // tank2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(636, 197);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(292, 32);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "2.Glass Canon:light armored tank that moes fast,\r\n hits hard, but has very low HP" +
+            this.tank2.AutoSize = true;
+            this.tank2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tank2.Location = new System.Drawing.Point(636, 197);
+            this.tank2.Name = "tank2";
+            this.tank2.Size = new System.Drawing.Size(292, 32);
+            this.tank2.TabIndex = 12;
+            this.tank2.Text = "2.Glass Canon:light armored tank that moes fast,\r\n hits hard, but has very low HP" +
     "";
+            this.tank2.Visible = false;
             // 
-            // label2
+            // tank1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(30, 182);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(292, 32);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "2.Glass Canon:light armored tank that moes fast,\r\n hits hard, but has very low HP" +
-    "";
+            this.tank1.AutoSize = true;
+            this.tank1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tank1.Location = new System.Drawing.Point(42, 197);
+            this.tank1.Name = "tank1";
+            this.tank1.Size = new System.Drawing.Size(261, 32);
+            this.tank1.TabIndex = 13;
+            this.tank1.Text = "1.Normal: normal hp, damage, and speed. \r\nthis tank is the definition of average";
+            this.tank1.Visible = false;
             // 
             // Form1
             // 
@@ -196,8 +197,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(971, 475);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tank1);
+            this.Controls.Add(this.tank2);
             this.Controls.Add(this.juggernaut);
             this.Controls.Add(this.glasscanon);
             this.Controls.Add(this.normaltank);
@@ -233,8 +234,8 @@
         private System.Windows.Forms.PictureBox normaltank;
         private System.Windows.Forms.PictureBox glasscanon;
         private System.Windows.Forms.PictureBox juggernaut;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label tank2;
+        private System.Windows.Forms.Label tank1;
     }
 }
 
