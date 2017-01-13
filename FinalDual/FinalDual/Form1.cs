@@ -18,7 +18,7 @@ namespace FinalDual
         int player1X;
         int player2X;
         int player2Y;
-        menuButton 
+      
 
 
         public Form1()
@@ -48,6 +48,7 @@ namespace FinalDual
             howToPlayButton.Visible = false;
             titleLabel.Visible = false;
             menuButton.Visible = true;
+        }
              
             private void Form1_Paint(object sender, PaintEventArgs e)
         {
