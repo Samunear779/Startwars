@@ -18,12 +18,16 @@ namespace FinalDual
         int player1X;
         int player2X;
         int player2Y;
-      //Sam rly sucks
+        Font smallFont = new Font("Papyrus", 16, FontStyle.Regular);
+        Font titleFont = new Font("Papyrus", 48, FontStyle.Regular);
+        SolidBrush drawBrush = new SolidBrush(Color.White);
+        Pen drawPen = new Pen(Color.White, 16);
+        //Sam rly sucks
 
 
         public Form1()
         {
-            InitializeComponent();  
+            InitializeComponent();
 
         }
 
@@ -38,24 +42,25 @@ namespace FinalDual
             normaltank.Visible = true;
             glasscanon.Visible = true;
             juggernaut.Visible = true;
-            
+
         }
 
         private void howToPlayButton_Click(object sender, EventArgs e)
         {
-            BackColor = Color.IndianRed;
+            Graphics fg = this.CreateGraphics();         
             playButton.Visible = false;
             howToPlayButton.Visible = false;
             titleLabel.Visible = false;
             menuButton.Visible = true;
-        }
-             
-            private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            //e.Graphics.DrawString("Hello", drawFont, drawBrush, 50, 40);
-
+            swordpic.Visible = false;
+            fg.DrawString("How To Play", titleFont, drawBrush, 290, 20);
         }
 
-      }
+        //private void Form1_Paint(object sender, PaintEventArgs e)
+        //{
+        //    e.Graphics.DrawString("How To Play", titleFont, drawBrush, 487, 100);
+        //}
     }
+}
+    
 

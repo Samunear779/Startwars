@@ -38,13 +38,13 @@
             this.juggernaut = new System.Windows.Forms.PictureBox();
             this.glasscanon = new System.Windows.Forms.PictureBox();
             this.normaltank = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.swordpic = new System.Windows.Forms.PictureBox();
             this.tank2 = new System.Windows.Forms.Label();
             this.tank1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.juggernaut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glasscanon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.normaltank)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.swordpic)).BeginInit();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -159,14 +159,14 @@
             this.normaltank.TabStop = false;
             this.normaltank.Visible = false;
             // 
-            // pictureBox1
+            // swordpic
             // 
-            this.pictureBox1.Image = global::FinalDual.Properties.Resources.swords;
-            this.pictureBox1.Location = new System.Drawing.Point(383, 182);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(223, 224);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.swordpic.Image = global::FinalDual.Properties.Resources.swords;
+            this.swordpic.Location = new System.Drawing.Point(383, 182);
+            this.swordpic.Name = "swordpic";
+            this.swordpic.Size = new System.Drawing.Size(223, 224);
+            this.swordpic.TabIndex = 7;
+            this.swordpic.TabStop = false;
             // 
             // tank2
             // 
@@ -203,7 +203,7 @@
             this.Controls.Add(this.glasscanon);
             this.Controls.Add(this.normaltank);
             this.Controls.Add(this.startbutton);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.swordpic);
             this.Controls.Add(this.menuButton);
             this.Controls.Add(this.classSelect2);
             this.Controls.Add(this.classSelect1);
@@ -215,7 +215,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.juggernaut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glasscanon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.normaltank)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.swordpic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,7 +229,7 @@
         private System.Windows.Forms.TextBox classSelect1;
         private System.Windows.Forms.TextBox classSelect2;
         private System.Windows.Forms.Button menuButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox swordpic;
         private System.Windows.Forms.Button startbutton;
         private System.Windows.Forms.PictureBox normaltank;
         private System.Windows.Forms.PictureBox glasscanon;
