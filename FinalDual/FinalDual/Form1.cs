@@ -44,7 +44,7 @@ namespace FinalDual
             juggernaut.Visible = true;
             
         }
-
+        
         private void howToPlayButton_Click(object sender, EventArgs e)
         {
             Graphics fg = this.CreateGraphics();         
