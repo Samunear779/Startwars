@@ -50,9 +50,9 @@ namespace FinalDual
             Graphics fg = this.CreateGraphics();         
             playButton.Visible = false;
             howToPlayButton.Visible = false;
-            titleLabel.Visible = false;
+            titleLabel.Visible = false;  
             menuButton.Visible = true;
-            swordpic.Visible = false;
+            dualPic.Visible = false;
             fg.DrawString("How To Play", titleFont, drawBrush, 290, 20);
         }
              
