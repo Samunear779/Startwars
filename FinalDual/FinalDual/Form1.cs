@@ -46,7 +46,7 @@ namespace FinalDual
 
 
         }
-
+        
         private void howToPlayButton_Click(object sender, EventArgs e)
         {
             BackColor = Color.IndianRed;
