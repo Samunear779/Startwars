@@ -43,12 +43,17 @@ namespace FinalDual
             normaltanklabel.Visible = true;
             juggernautlable.Visible = true;
 
+            player1Class = Convert.ToInt32(classSelect1);
+            player2Class = Convert.ToInt32(classSelect2);
+            
+
 
 
         }
         
         private void howToPlayButton_Click(object sender, EventArgs e)
         {
+            
             BackColor = Color.IndianRed;
             playButton.Visible = false;
             howToPlayButton.Visible = false;
@@ -77,7 +82,7 @@ namespace FinalDual
             normaltanklabel.Visible = false;
             juggernautlable.Visible = false;
             dualimage.Visible = true;
-
+            titleLabel.Visible = true;
 
 
 

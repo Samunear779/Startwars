@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.titleLabel = new System.Windows.Forms.Label();
             this.howToPlayButton = new System.Windows.Forms.Button();
             this.playButton = new System.Windows.Forms.Button();
@@ -42,6 +43,7 @@
             this.glasscanonlable = new System.Windows.Forms.Label();
             this.normaltanklabel = new System.Windows.Forms.Label();
             this.juggernautlable = new System.Windows.Forms.Label();
+            this.gametimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.juggernautpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glasscanonpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.normaltankpic)).BeginInit();
@@ -205,6 +207,10 @@
             this.juggernautlable.Text = "3. Juggernaut: a Heavy tank with a lot of hp and \r\ndamage but is as slow as you";
             this.juggernautlable.Visible = false;
             // 
+            // gametimer
+            // 
+            this.gametimer.Interval = 1000;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,6 +258,7 @@
         private System.Windows.Forms.Label glasscanonlable;
         private System.Windows.Forms.Label normaltanklabel;
         private System.Windows.Forms.Label juggernautlable;
+        private System.Windows.Forms.Timer gametimer;
     }
 }
 
