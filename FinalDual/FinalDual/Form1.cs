@@ -59,8 +59,8 @@ namespace FinalDual
             howToPlayButton.Visible = false;
             titleLabel.Visible = false;  
             menuButton.Visible = true;
-            swordpic.Visible = false;
-            fg.DrawString("How To Play", titleFont, drawBrush, 290, 20);
+            //swordpic.Visible = false;
+            //fg.DrawString("How To Play", titleFont, drawBrush, 290, 20);  
         }
              
             private void Form1_Paint(object sender, PaintEventArgs e)
