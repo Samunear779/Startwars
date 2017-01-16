@@ -89,9 +89,9 @@
             this.classSelect1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.classSelect1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.classSelect1.Font = new System.Drawing.Font("Papyrus", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classSelect1.Location = new System.Drawing.Point(192, 232);
+            this.classSelect1.Location = new System.Drawing.Point(179, 232);
             this.classSelect1.Name = "classSelect1";
-            this.classSelect1.Size = new System.Drawing.Size(34, 26);
+            this.classSelect1.Size = new System.Drawing.Size(23, 26);
             this.classSelect1.TabIndex = 4;
             this.classSelect1.Visible = false;
             // 
@@ -100,9 +100,9 @@
             this.classSelect2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.classSelect2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.classSelect2.Font = new System.Drawing.Font("Papyrus", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classSelect2.Location = new System.Drawing.Point(755, 232);
+            this.classSelect2.Location = new System.Drawing.Point(768, 232);
             this.classSelect2.Name = "classSelect2";
-            this.classSelect2.Size = new System.Drawing.Size(34, 26);
+            this.classSelect2.Size = new System.Drawing.Size(23, 26);
             this.classSelect2.TabIndex = 5;
             this.classSelect2.Visible = false;
             // 
