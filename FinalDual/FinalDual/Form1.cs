@@ -18,12 +18,16 @@ namespace FinalDual
         int player1X;
         int player2X;
         int player2Y;
-      //Sam rly sucks
+        Font smallFont = new Font("Papyrus", 16, FontStyle.Regular);
+        Font titleFont = new Font("Papyrus", 48, FontStyle.Regular);
+        SolidBrush drawBrush = new SolidBrush(Color.White);
+        Pen drawPen = new Pen(Color.White, 16);
+        //Sam rly sucks
 
 
         public Form1()
         {
-            InitializeComponent();  
+            InitializeComponent();
 
         }
 
@@ -35,25 +39,21 @@ namespace FinalDual
             classSelect1.Visible = true;
             classSelect2.Visible = true;
             startbutton.Visible = true;
-            normaltankpic.Visible = true;
-            glasscanonpic.Visible = true;
-            juggernautpic.Visible = true;
-            dualimage.Visible = false;
-            glasscanonlable.Visible = true;
-            normaltanklabel.Visible = true;
-            juggernautlable.Visible = true;
-
-
-
+            normaltank.Visible = true;
+            glasscanon.Visible = true;
+            juggernaut.Visible = true;
+            
         }
 
         private void howToPlayButton_Click(object sender, EventArgs e)
         {
-            BackColor = Color.IndianRed;
+            Graphics fg = this.CreateGraphics();         
             playButton.Visible = false;
             howToPlayButton.Visible = false;
             titleLabel.Visible = false;
             menuButton.Visible = true;
+            swordpic.Visible = false;
+            fg.DrawString("How To Play", titleFont, drawBrush, 290, 20);
         }
              
             private void Form1_Paint(object sender, PaintEventArgs e)
@@ -62,33 +62,6 @@ namespace FinalDual
 
         }
 
-        private void menuButton_Click(object sender, EventArgs e)
-        {
-            playButton.Visible = true;
-            howToPlayButton.Visible = true;
-            menuButton.Visible = false;
-            classSelect1.Visible = false;
-            classSelect2.Visible = false;
-            startbutton.Visible = false;
-            normaltankpic.Visible = false;
-            glasscanonpic.Visible = false;
-            juggernautpic.Visible = false;
-            glasscanonlable.Visible = false;
-            normaltanklabel.Visible = false;
-            juggernautlable.Visible = false;
-            dualimage.Visible = true;
-
-
-
-
-        }
-
-        private void startbutton_Click(object sender, EventArgs e)
-        {
-            
-
-
-        }
-    }
+      }
     }
 
