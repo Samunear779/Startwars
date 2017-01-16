@@ -13,18 +13,29 @@ namespace FinalDual
 {
     public partial class Form1 : Form
     {
+        int player2Height = 20;
+        int player1Height = 20;
+        int player2Width = 20;
+        int player1Width = 20;
         int player1Class;
         int player2Class;
+        int player1Health = 100;
+        int player2Health = 100;
+        int playerSpeed = 10;
+        int player1Damage = 20;
+        Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown;
         int player1X;
         int player2X;
+        int player1Y;
         int player2Y;
       //Sam rly sucks
 
 
         public Form1()
         {
-            InitializeComponent();  
-
+            InitializeComponent();
+            gametimer.Enabled = true;
+            gametimer.Start();
         }
 
         private void playButton_Click(object sender, EventArgs e)
@@ -43,8 +54,8 @@ namespace FinalDual
             normaltanklabel.Visible = true;
             juggernautlable.Visible = true;
 
-            player1Class = Convert.ToInt32(classSelect1);
-            player2Class = Convert.ToInt32(classSelect2);
+            //player1Class = Convert.ToInt32(classSelect1);
+            //player2Class = Convert.ToInt32(classSelect2);
             
 
 
