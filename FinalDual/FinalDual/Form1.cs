@@ -88,7 +88,7 @@ namespace FinalDual
             juggernautlable.Visible = false;
             dualimage.Visible = true;
             titleLabel.Visible = true;
-
+            
 
 
         }
