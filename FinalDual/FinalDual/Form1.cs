@@ -185,7 +185,7 @@ namespace FinalDual
             classPlayer1 = Convert.ToInt32(classSelect1.Text);
             classPlayer2 = Convert.ToInt32(classSelect2.Text);
             startbutton.Visible = false;
-           
+           //
 
             if (classPlayer1 == 1)
             {
