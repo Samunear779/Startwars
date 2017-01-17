@@ -191,11 +191,8 @@ namespace FinalDual
             {
 
             }
-            ////////liyfkiytsd
-            //thanks for the update
-            //new message 
-
-            //message
+          
+            else if (classPlayer1 ==2)
 
             
 
