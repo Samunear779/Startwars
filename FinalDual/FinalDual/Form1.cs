@@ -13,29 +13,20 @@ namespace FinalDual
 {
     public partial class Form1 : Form
     {
-        int player2Height = 20;
-        int player1Height = 20;
-        int player2Width = 20;
-        int player1Width = 20;
         int player1Class;
         int player2Class;
-        int player1Health = 100;
-        int player2Health = 100;
-        int playerSpeed = 10;
-        int player1Damage = 20;
-        Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown;
         int player1X;
         int player2X;
         int player1Y;
         int player2Y;
-      //Sam rly sucks
+
+        //Sam rly sucks
 
 
         public Form1()
         {
-            InitializeComponent();
-            gametimer.Enabled = true;
-            gametimer.Start();
+            InitializeComponent();  
+
         }
 
         private void playButton_Click(object sender, EventArgs e)
@@ -54,24 +45,24 @@ namespace FinalDual
             normaltanklabel.Visible = true;
             juggernautlable.Visible = true;
 
-            //player1Class = Convert.ToInt32(classSelect1);
-            //player2Class = Convert.ToInt32(classSelect2);
+            player1Class = Convert.ToInt32(classSelect1);
+            player2Class = Convert.ToInt32(classSelect2);
             
 
 
 
         }
-        
+
         private void howToPlayButton_Click(object sender, EventArgs e)
         {
-            
-            BackColor = Color.IndianRed;
-            playButton.Visible = false;
-            howToPlayButton.Visible = false;
-            titleLabel.Visible = false;  
+            //Graphics
+            Graphics fg = this.CreateGraphics();
+            Pen redpen = new Pen(Color.Red, 10);
+            SolidBrush titelbrush = new SolidBrush(Color.Black);
+            Font titelFont = new Font("Papyrus", 48, FontStyle.Regular);
             menuButton.Visible = true;
-            //swordpic.Visible = false;
-            //fg.DrawString("How To Play", titleFont, drawBrush, 290, 20);  
+            dualimage.Visible = false;
+            fg.DrawString("How To Play", titelFont, titelbrush, 290, 20);  
         }
              
             private void Form1_Paint(object sender, PaintEventArgs e)
@@ -82,6 +73,7 @@ namespace FinalDual
 
         private void menuButton_Click(object sender, EventArgs e)
         {
+            Refresh();
             playButton.Visible = true;
             howToPlayButton.Visible = true;
             menuButton.Visible = false;
@@ -103,7 +95,9 @@ namespace FinalDual
 
         private void startbutton_Click(object sender, EventArgs e)
         {
-            
+            player1Class = Convert.ToInt32(classSelect1);
+            player2Class = Convert.ToInt32(classSelect2);
+
 
 
         }
