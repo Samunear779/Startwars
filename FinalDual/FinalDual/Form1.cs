@@ -33,9 +33,7 @@ namespace FinalDual
         public Form1()
         {
             InitializeComponent();
-            gametimer.Enabled = true;
-            gametimer.Start();
-
+            gametimer.Enabled = true;         
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -182,6 +180,7 @@ namespace FinalDual
         private void startbutton_Click(object sender, EventArgs e)
         {
             #region Start Game
+            gametimer.Start();
             classPlayer1 = Convert.ToInt32(classSelect1.Text);
             classPlayer2 = Convert.ToInt32(classSelect2.Text);
             startbutton.Visible = false;
@@ -192,9 +191,15 @@ namespace FinalDual
 
             }
           
-            else if (classPlayer1 ==2)
+            else if (classPlayer1 == 2)
+            {
 
-            
+            }
+
+            else if (classPlayer1 == 3)
+            {
+
+            }
 
             if (classPlayer2 == 1)
             {
