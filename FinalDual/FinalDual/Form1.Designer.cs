@@ -179,10 +179,10 @@
             this.glasscanonlable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glasscanonlable.Location = new System.Drawing.Point(636, 197);
             this.glasscanonlable.Name = "glasscanonlable";
-            this.glasscanonlable.Size = new System.Drawing.Size(295, 32);
+            this.glasscanonlable.Size = new System.Drawing.Size(302, 32);
             this.glasscanonlable.TabIndex = 12;
-            this.glasscanonlable.Text = "2.Glass Canon: light armored tank that moes fast,\r\n hits hard, but has very low H" +
-    "P";
+            this.glasscanonlable.Text = "2.Glass Canon: light armored tank that moves fast,\r\n hits hard, but has very low " +
+    "HP";
             this.glasscanonlable.Visible = false;
             // 
             // normaltanklabel
@@ -202,14 +202,15 @@
             this.juggernautlable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.juggernautlable.Location = new System.Drawing.Point(340, 154);
             this.juggernautlable.Name = "juggernautlable";
-            this.juggernautlable.Size = new System.Drawing.Size(287, 32);
+            this.juggernautlable.Size = new System.Drawing.Size(287, 48);
             this.juggernautlable.TabIndex = 14;
-            this.juggernautlable.Text = "3. Juggernaut: a Heavy tank with a lot of hp and \r\ndamage but is as slow as you";
+            this.juggernautlable.Text = "3. Juggernaut: a Heavy tank with a lot of hp and \r\ndamage but is very slow \r\n\r\n";
             this.juggernautlable.Visible = false;
             // 
             // gametimer
             // 
-            this.gametimer.Interval = 1000;
+            this.gametimer.Interval = 16;
+            this.gametimer.Tick += new System.EventHandler(this.gametimer_Tick);
             // 
             // Form1
             // 
@@ -233,6 +234,9 @@
             this.Controls.Add(this.titleLabel);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.juggernautpic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glasscanonpic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.normaltankpic)).EndInit();
