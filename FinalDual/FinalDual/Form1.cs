@@ -16,16 +16,16 @@ namespace FinalDual
         int classPlayer1 = 0;
         int classPlayer2 = 0;
         int xPlayer1 = 50;
-        int xPlayer2 = 50;
-        int yPlayer1 = 200;
-        int yPlayer2 = 200;
-        int speedPlayer1 = 10;
-        int speedPlaeyr2 = 10;
+        int xPlayer2 = 900;
+        int yPlayer1 = 245;
+        int yPlayer2 = 245;
+        int speedPlayer1 = 7;
+        int speedPlayer2 = 7;
         int widthPlayer1 = 20;
         int widthPlayer2 = 20;
         int heightPlayer1 = 20;
         int heightPlayer2 = 20;
-        Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown;
+        Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown,aplayer1,sPlayer1,dPlayer1,wPlayer1, gameOn;
         
         SolidBrush player1Brush = new SolidBrush(Color.Black);
         SolidBrush player2Brush = new SolidBrush(Color.White);
@@ -38,7 +38,7 @@ namespace FinalDual
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
-            #region Player1 Key Up
+            #region Player2 Key Up
             //check to see if a key has been released and set its KeyDown value to false if it has
             switch (e.KeyCode)
             {
@@ -62,7 +62,7 @@ namespace FinalDual
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            #region Player1 Key Down 
+            #region Player2 Key Down 
             //check to see if a key is pressed and set is KeyDown value to true if it has
             switch (e.KeyCode)
             {
@@ -90,22 +90,34 @@ namespace FinalDual
 
             if (leftArrowDown == true)
             {
-                xPlayer1 = xPlayer1 - speedPlayer1;
+                if(xPlayer2 > 3) 
+                    {
+                        xPlayer2 = xPlayer2 - speedPlayer2;
+                    }
             }
 
             if (downArrowDown == true)
             {
-                yPlayer1 = yPlayer1 + speedPlayer1;
+                if (yPlayer2 < this.Height - heightPlayer2 - 45)
+                {
+                    yPlayer2 = yPlayer2 + speedPlayer2;
+                }
             }
 
             if (rightArrowDown == true)
             {
-                xPlayer1 = xPlayer1 + speedPlayer1;
+                if (xPlayer2 < this.Width - widthPlayer2 - 21)
+                {
+                    xPlayer2 = xPlayer2 + speedPlayer2;
+                }
             }
 
             if (upArrowDown == true)
             {
-                yPlayer1 = yPlayer1 - speedPlayer1;
+                if (yPlayer2 > 4)
+                {
+                    yPlayer2 = yPlayer2 - speedPlayer2;
+                }
             }
 
             Refresh();
@@ -113,8 +125,11 @@ namespace FinalDual
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
-        { 
-            e.Graphics.FillRectangle(player1Brush, xPlayer1, yPlayer1, widthPlayer1, heightPlayer1);
+        {
+            if (gameOn == true)
+            {
+                e.Graphics.FillRectangle(player2Brush, xPlayer2, yPlayer2, widthPlayer2, heightPlayer2);
+            }
         }
 
         private void playButton_Click(object sender, EventArgs e)
@@ -192,6 +207,7 @@ namespace FinalDual
         private void startbutton_Click(object sender, EventArgs e)
         {
             #region Start Game
+            gameOn = true;
             gametimer.Enabled = true;
             gametimer.Start();     
             classPlayer1 = Convert.ToInt32(classSelect1.Text);
@@ -202,17 +218,17 @@ namespace FinalDual
             player2label.Visible = false;
 
 
-            if (classPlayer1 == 1)
+            if (classPlayer2 == 1)
             {
 
             }
           
-            else if (classPlayer1 == 2)
+            else if (classPlayer2 == 2)
             {
 
             }
 
-            else if (classPlayer1 == 3)
+            else if (classPlayer2 == 3)
             {
 
             }
@@ -232,7 +248,7 @@ namespace FinalDual
 
             }
 
-            if (classPlayer1 == 1)
+            if (classPlayer2 == 1)
             {
 
             }
@@ -241,7 +257,7 @@ namespace FinalDual
             {
 
             }
-            if (classPlayer1 == 1)
+            if (classPlayer2 == 1)
             {
 
             }
@@ -250,7 +266,6 @@ namespace FinalDual
             {
 
             }
-
 
             titleLabel.Visible = false;
             juggernautlable.Visible = false;
@@ -263,7 +278,6 @@ namespace FinalDual
             classSelect2.Visible = false;
             menuButton.Visible = false;
             #endregion
-
             this.Focus();
         }
     }
