@@ -25,6 +25,10 @@ namespace FinalDual
         int widthPlayer2 = 20;
         int heightPlayer1 = 20;
         int heightPlayer2 = 20;
+        int healthPlayer1 = 200;
+        int healthPlayer2 = 200;
+        int fireratePlayer1 = 1000;
+        int fireratePlayer2 = 1000;
         Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown,aplayer1,sPlayer1,dPlayer1,wPlayer1, gameOn;
         
         SolidBrush player1Brush = new SolidBrush(Color.Black);
