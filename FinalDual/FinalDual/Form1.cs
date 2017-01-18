@@ -134,8 +134,13 @@ namespace FinalDual
             glasscanonlable.Visible = true;
             normaltanklabel.Visible = true;
             juggernautlable.Visible = true;
+            chooselabel.Visible = true;
+            player1label.Visible = true;
+            player2label.Visible = true;
             #endregion
         }
+
+       
 
         private void howToPlayButton_Click(object sender, EventArgs e)
         {
@@ -146,13 +151,17 @@ namespace FinalDual
             SolidBrush titelbrush = new SolidBrush(Color.Black);
             SolidBrush smallbrush = new SolidBrush(Color.Black);
             Font titelFont = new Font("Papyrus", 48, FontStyle.Regular);
+            Font textFont = new Font("Papyrus", 20, FontStyle.Regular);
             menuButton.Visible = true;
             dualimage.Visible = false;
             howToPlayButton.Visible = false;
             playButton.Visible = false;
             titleLabel.Visible = false;
             fg.DrawString("How To Play", titelFont, titelbrush, 290, 20);
-
+            chooselabel.Visible = false;
+            fg.DrawString("This is a 1v1 tank game, player 1 uses wasd and spacebar,\n  player 2 uses arrow keys and right control button. \n each player has 3 live and can choose from 3 different tanks, \n each have different features listed in the play screen.\n First tank to destroy the other 3 times wins!", textFont, smallbrush, 175, 150);
+            player1label.Visible = false;
+            player2label.Visible = false;        
             #endregion
         }
 
@@ -174,6 +183,9 @@ namespace FinalDual
             juggernautlable.Visible = false;
             dualimage.Visible = true;
             titleLabel.Visible = true;
+            chooselabel.Visible = false;
+            player1label.Visible = false;
+            player2label.Visible = false;
             #endregion
         }
 
@@ -185,7 +197,10 @@ namespace FinalDual
             classPlayer1 = Convert.ToInt32(classSelect1.Text);
             classPlayer2 = Convert.ToInt32(classSelect2.Text);
             startbutton.Visible = false;
-           
+            chooselabel.Visible = false;
+            player1label.Visible = false;
+            player2label.Visible = false;
+
 
             if (classPlayer1 == 1)
             {

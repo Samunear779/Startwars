@@ -44,6 +44,9 @@
             this.normaltanklabel = new System.Windows.Forms.Label();
             this.juggernautlable = new System.Windows.Forms.Label();
             this.gametimer = new System.Windows.Forms.Timer(this.components);
+            this.chooselabel = new System.Windows.Forms.Label();
+            this.player2label = new System.Windows.Forms.Label();
+            this.player1label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.juggernautpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glasscanonpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.normaltankpic)).BeginInit();
@@ -110,7 +113,7 @@
             // 
             this.menuButton.BackColor = System.Drawing.Color.Silver;
             this.menuButton.Font = new System.Drawing.Font("Papyrus", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuButton.Location = new System.Drawing.Point(12, 401);
+            this.menuButton.Location = new System.Drawing.Point(24, 408);
             this.menuButton.Name = "menuButton";
             this.menuButton.Size = new System.Drawing.Size(240, 62);
             this.menuButton.TabIndex = 6;
@@ -212,12 +215,48 @@
             this.gametimer.Interval = 16;
             this.gametimer.Tick += new System.EventHandler(this.gametimer_Tick);
             // 
+            // chooselabel
+            // 
+            this.chooselabel.AutoSize = true;
+            this.chooselabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chooselabel.Location = new System.Drawing.Point(612, 412);
+            this.chooselabel.Name = "chooselabel";
+            this.chooselabel.Size = new System.Drawing.Size(355, 58);
+            this.chooselabel.TabIndex = 15;
+            this.chooselabel.Text = "Choose a class corisponding to \r\nthe number beside the class";
+            this.chooselabel.Visible = false;
+            // 
+            // player2label
+            // 
+            this.player2label.AutoSize = true;
+            this.player2label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player2label.Location = new System.Drawing.Point(708, 285);
+            this.player2label.Name = "player2label";
+            this.player2label.Size = new System.Drawing.Size(157, 25);
+            this.player2label.TabIndex = 16;
+            this.player2label.Text = "Player 2 Select";
+            this.player2label.Visible = false;
+            // 
+            // player1label
+            // 
+            this.player1label.AutoSize = true;
+            this.player1label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player1label.Location = new System.Drawing.Point(122, 285);
+            this.player1label.Name = "player1label";
+            this.player1label.Size = new System.Drawing.Size(157, 25);
+            this.player1label.TabIndex = 17;
+            this.player1label.Text = "Player 1 Select";
+            this.player1label.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(971, 475);
+            this.Controls.Add(this.player1label);
+            this.Controls.Add(this.player2label);
+            this.Controls.Add(this.chooselabel);
             this.Controls.Add(this.juggernautlable);
             this.Controls.Add(this.normaltanklabel);
             this.Controls.Add(this.glasscanonlable);
@@ -263,6 +302,9 @@
         private System.Windows.Forms.Label normaltanklabel;
         private System.Windows.Forms.Label juggernautlable;
         private System.Windows.Forms.Timer gametimer;
+        private System.Windows.Forms.Label chooselabel;
+        private System.Windows.Forms.Label player2label;
+        private System.Windows.Forms.Label player1label;
     }
 }
 
