@@ -25,6 +25,8 @@ namespace FinalDual
         int widthPlayer2 = 20;
         int heightPlayer1 = 20;
         int heightPlayer2 = 20;
+        int livesplayer1 = 3;
+        int livesplayer2 = 3;
         Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown,aplayer1,sPlayer1,dPlayer1,wPlayer1, gameOn;
         
         SolidBrush player1Brush = new SolidBrush(Color.Black);
@@ -220,7 +222,7 @@ namespace FinalDual
 
             if (classPlayer2 == 1)
             {
-
+                
             }
           
             else if (classPlayer2 == 2)
