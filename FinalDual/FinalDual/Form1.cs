@@ -30,7 +30,7 @@ namespace FinalDual
         int fireratePlayer1 = 1000;
         int fireratePlayer2 = 1000;
         Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown,aplayer1,sPlayer1,dPlayer1,wPlayer1, gameOn;
-        
+        //
         SolidBrush player1Brush = new SolidBrush(Color.Black);
         SolidBrush player2Brush = new SolidBrush(Color.White);
 
