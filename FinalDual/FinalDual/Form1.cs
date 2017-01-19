@@ -60,8 +60,21 @@ namespace FinalDual
                 case Keys.Up:
                     upArrowDown = false;
                     break;
+                case Keys.A:
+                    aplayer1 = false;
+                    break;
+                case Keys.S:
+                    sPlayer1 = false;
+                    break;
+                case Keys.W:
+                    wPlayer1 = false;
+                    break;
+                case Keys.D:
+                    dPlayer1 = false;
+                    break;
                 default:
                     break;
+
             }
             #endregion
         }
@@ -84,6 +97,18 @@ namespace FinalDual
                 case Keys.Up:
                     upArrowDown = true;
                     break;
+                case Keys.A:
+                    aplayer1 = true;
+                    break;
+                case Keys.S:
+                    sPlayer1 = true;
+                    break;
+                case Keys.W:
+                    wPlayer1 = true;
+                    break;
+                case Keys.D:
+                    dPlayer1 = true;
+                    break; 
                 default:
                     break;
             }
@@ -123,6 +148,39 @@ namespace FinalDual
                 if (yPlayer2 > 4)
                 {
                     yPlayer2 = yPlayer2 - speedPlayer2;
+                }
+            }
+
+
+            if (aplayer1 == true)
+            {
+                if (xPlayer1 > 3)
+                {
+                     xPlayer1 = xPlayer1 - speedPlayer1;
+                }
+            }
+
+            if (sPlayer1 == true)
+            {
+                if (yPlayer1 < this.Height - heightPlayer1 - 45)
+                {
+                    yPlayer1 = yPlayer1 + speedPlayer1;
+                }
+            }
+
+            if (dPlayer1 == true)
+            {
+                if (xPlayer1 < this.Width - widthPlayer1 - 21)
+                {
+                    xPlayer1 = xPlayer1 + speedPlayer1;
+                }
+            }
+
+            if (wPlayer1 == true)
+            {
+                if (yPlayer1 > 4)
+                {
+                    yPlayer1 = yPlayer1 - speedPlayer1;
                 }
             }
 
@@ -233,7 +291,7 @@ namespace FinalDual
                 fireratePlayer2 = 100;
                 healthplayer2 = 100;
                 damagePlayer2 = 10;
-                speedPlayer2 = 9;
+                speedPlayer2 = 10;
             }
 
             else if (classPlayer2 == 3)
@@ -249,7 +307,7 @@ namespace FinalDual
                 fireratePlayer2 = 100;
                 healthplayer2 = 100;
                 damagePlayer2 = 10;
-                speedPlayer1 = 9;
+                speedPlayer1 = 10;
             }
 
             else if (classPlayer1 == 3)
