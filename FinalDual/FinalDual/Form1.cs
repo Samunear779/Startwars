@@ -25,6 +25,12 @@ namespace FinalDual
         int widthPlayer2 = 20;
         int heightPlayer1 = 20;
         int heightPlayer2 = 20;
+        int healthplayer1 = 200;
+        int healthplayer2 = 200;
+        int fireratePlayer1 = 500;
+        int fireratePlayer2 = 500;
+        int damagePlayer1 = 20;
+        int damagePlayer2 = 20;
         Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown,aplayer1,sPlayer1,dPlayer1,wPlayer1, gameOn;
         //
         SolidBrush player1Brush = new SolidBrush(Color.Black);
@@ -174,7 +180,7 @@ namespace FinalDual
             titleLabel.Visible = false;
             fg.DrawString("How To Play", titelFont, titelbrush, 290, 20);
             chooselabel.Visible = false;
-            fg.DrawString("This is a 1v1 tank game, player 1 uses wasd and spacebar,\n  player 2 uses arrow keys and right control button. \n each player has 3 live and can choose from 3 different tanks, \n each have different features listed in the play screen.\n First tank to destroy the other 3 times wins!", textFont, smallbrush, 175, 150);
+            fg.DrawString("This is a 1v1 tank game, player 1 uses wasd and spacebar,\n  player 2 uses arrow keys and right control button. \n each player has 3 lives and can choose from 3 different tanks, \n each have different features listed in the play screen.\n First tank to destroy the other 3 times wins!", textFont, smallbrush, 175, 150);
             player1label.Visible = false;
             player2label.Visible = false;        
             #endregion
@@ -216,57 +222,39 @@ namespace FinalDual
             chooselabel.Visible = false;
             player1label.Visible = false;
             player2label.Visible = false;
-
-
-            if (classPlayer2 == 1)
+                   
+            if (classPlayer2 == 2)
             {
-                
-            }
-          
-            else if (classPlayer2 == 2)
-            {
-
+                fireratePlayer2 = 100;
+                healthplayer2 = 100;
+                damagePlayer2 = 10;
+                speedPlayer2 = 9;
             }
 
             else if (classPlayer2 == 3)
             {
-
+                fireratePlayer2 = 1000;
+                healthplayer2 = 300;
+                damagePlayer2 = 50;
+                speedPlayer2 = 5;
             }
 
-            if (classPlayer2 == 1)
+             if (classPlayer1 == 2)
             {
-
+                fireratePlayer2 = 100;
+                healthplayer2 = 100;
+                damagePlayer2 = 10;
+                speedPlayer1 = 9;
             }
 
-            else if (classPlayer2 == 2)
+            else if (classPlayer1 == 3)
             {
-
+                fireratePlayer2 = 1000;
+                healthplayer2 = 300;
+                damagePlayer2 = 50;
+                speedPlayer1 = 5;
             }
-
-            else if (classPlayer2 == 3)
-            {
-
-            }
-
-            if (classPlayer2 == 1)
-            {
-
-            }
-
-            else if (classPlayer2 == 1)
-            {
-
-            }
-            if (classPlayer2 == 1)
-            {
-
-            }
-
-            else if (classPlayer2 == 1)
-            {
-
-            }
-
+                   
             titleLabel.Visible = false;
             juggernautlable.Visible = false;
             juggernautpic.Visible = false;
@@ -278,7 +266,6 @@ namespace FinalDual
             classSelect2.Visible = false;
             menuButton.Visible = false;
             #endregion
-            this.Focus();
         }
     }
 }
