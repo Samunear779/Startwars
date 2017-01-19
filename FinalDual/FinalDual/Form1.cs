@@ -35,7 +35,7 @@ namespace FinalDual
         
         SolidBrush player1Brush = new SolidBrush(Color.Black);
         SolidBrush player2Brush = new SolidBrush(Color.White);
-
+     
         public Form1()
         {
             InitializeComponent();
@@ -121,7 +121,7 @@ namespace FinalDual
 
             if (leftArrowDown == true)
             {
-                if(xPlayer2 > 3) 
+                if(xPlayer2 > 202) 
                     {
                         xPlayer2 = xPlayer2 - speedPlayer2;
                     }
@@ -170,7 +170,7 @@ namespace FinalDual
 
             if (dPlayer1 == true)
             {
-                if (xPlayer1 < this.Width - widthPlayer1 - 21)
+                if (xPlayer1 < this.Width - 200 - widthPlayer1 + 1)
                 {
                     xPlayer1 = xPlayer1 + speedPlayer1;
                 }
@@ -192,8 +192,8 @@ namespace FinalDual
         {
             if (gameOn == true)
             {
-                e.Graphics.FillRectangle(player2Brush, 0, 0, 200, this.Width);
-                e.Graphics.FillRectangle(player1Brush, this.Width - 200, 0, 200, this.Height);
+                e.Graphics.FillRectangle(player1Brush, 200, 0, 5, this.Width);
+                e.Graphics.FillRectangle(player2Brush, this.Width - 200, 0, 5, this.Height);
                 e.Graphics.FillRectangle(player2Brush, xPlayer2, yPlayer2, widthPlayer2, heightPlayer2);
                 e.Graphics.FillRectangle(player1Brush, xPlayer1, yPlayer1, widthPlayer1, heightPlayer1);
                
