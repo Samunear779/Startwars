@@ -134,7 +134,12 @@ namespace FinalDual
         {
             if (gameOn == true)
             {
+                e.Graphics.FillRectangle(player2Brush, 0, 0, 200, this.Width);
+                e.Graphics.FillRectangle(player1Brush, this.Width - 200, 0, 200, this.Height);
                 e.Graphics.FillRectangle(player2Brush, xPlayer2, yPlayer2, widthPlayer2, heightPlayer2);
+                e.Graphics.FillRectangle(player1Brush, xPlayer1, yPlayer1, widthPlayer1, heightPlayer1);
+               
+
             }
         }
 
