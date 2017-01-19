@@ -279,6 +279,7 @@ namespace FinalDual
             menuButton.Visible = false;
             #endregion
             this.Focus();
+            //
         }
     }
 }
