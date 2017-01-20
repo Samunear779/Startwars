@@ -32,10 +32,14 @@ namespace FinalDual
         int damagePlayer1 = 20;
         int damagePlayer2 = 20;
         Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown,aplayer1,sPlayer1,dPlayer1,wPlayer1, gameOn;
+
+       
         
         SolidBrush player1Brush = new SolidBrush(Color.Black);
         SolidBrush player2Brush = new SolidBrush(Color.White);
-     
+        SolidBrush blockBrush = new SolidBrush(Color.Gray);
+
+
         public Form1()
         {
             InitializeComponent();
@@ -184,21 +188,41 @@ namespace FinalDual
                 }
             }
 
+            //if(recPlayer1.IntersectsWith(Name of vaiable))
+            //{
+
+            //}
+
             Refresh();
             #endregion        
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
+            #region Draw Players and graphics 
             if (gameOn == true)
             {
+                //draw spawn areas 
                 e.Graphics.FillRectangle(player1Brush, 200, 0, 5, this.Width);
                 e.Graphics.FillRectangle(player2Brush, this.Width - 200, 0, 5, this.Height);
+                //draw gray blocks
+                e.Graphics.FillRectangle(blockBrush, 275, 30, 50, 178);
+                e.Graphics.FillRectangle(blockBrush, 275, 270, 50, 178);
+                //right blocks
+                e.Graphics.FillRectangle(blockBrush, this.Width - 275, 30, 50, 178);
+                e.Graphics.FillRectangle(blockBrush, this.Width - 275, 270, 50, 178);
+                //Top and Bottom blocks 
+                e.Graphics.FillRectangle(blockBrush, 375, 30, 284, 50);
+                e.Graphics.FillRectangle(blockBrush, 375,395, 284, 50);
+                //middle block
+                e.Graphics.FillRectangle(blockBrush, 492, 215, 50, 50);
+                //Draw Players 
                 e.Graphics.FillRectangle(player2Brush, xPlayer2, yPlayer2, widthPlayer2, heightPlayer2);
                 e.Graphics.FillRectangle(player1Brush, xPlayer1, yPlayer1, widthPlayer1, heightPlayer1);
-               
 
+                
             }
+            #endregion
         }
 
         private void playButton_Click(object sender, EventArgs e)
