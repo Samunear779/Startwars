@@ -13,6 +13,7 @@ namespace FinalDual
 {
     public partial class Form1 : Form
     {
+        //variables
         int classPlayer1 = 0;
         int classPlayer2 = 0;
         int xPlayer1 = 50;
@@ -31,8 +32,10 @@ namespace FinalDual
         int fireratePlayer2 = 500;
         int damagePlayer1 = 20;
         int damagePlayer2 = 20;
+        int livesplayer1 = 3;
+        int livesplayer2 = 3;
         Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown,aplayer1,sPlayer1,dPlayer1,wPlayer1, gameOn;
-        
+        //tank colors
         SolidBrush player1Brush = new SolidBrush(Color.Black);
         SolidBrush player2Brush = new SolidBrush(Color.White);
      
@@ -44,6 +47,7 @@ namespace FinalDual
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
+            //player movement up
             #region Player2 Key Up
             //check to see if a key has been released and set its KeyDown value to false if it has
             switch (e.KeyCode)
@@ -81,6 +85,7 @@ namespace FinalDual
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            //player movement down
             #region Player2 Key Down 
             //check to see if a key is pressed and set is KeyDown value to true if it has
             switch (e.KeyCode)
@@ -116,15 +121,22 @@ namespace FinalDual
         }
 
         private void gametimer_Tick(object sender, EventArgs e)
-        {
+        {   
+            //graphics
+            Graphics fg = this.CreateGraphics();
+            SolidBrush smallbrush = new SolidBrush(Color.Black);
+            SolidBrush titelbrush = new SolidBrush(Color.Black);
+            Font titelFont = new Font("Papyrus", 48, FontStyle.Regular);
+            
+            // collision 
             #region Check for movement and collisions 
 
             if (leftArrowDown == true)
             {
-                if(xPlayer2 > 202) 
-                    {
-                        xPlayer2 = xPlayer2 - speedPlayer2;
-                    }
+                if (xPlayer2 > 202)
+                {
+                    xPlayer2 = xPlayer2 - speedPlayer2;
+                }
             }
 
             if (downArrowDown == true)
@@ -156,7 +168,7 @@ namespace FinalDual
             {
                 if (xPlayer1 > 3)
                 {
-                     xPlayer1 = xPlayer1 - speedPlayer1;
+                    xPlayer1 = xPlayer1 - speedPlayer1;
                 }
             }
 
@@ -183,6 +195,16 @@ namespace FinalDual
                     yPlayer1 = yPlayer1 - speedPlayer1;
                 }
             }
+            if (livesplayer1 == 0)
+            {
+                fg.DrawString("PLAYER 2 WINS", titelFont, titelbrush, 290, 20);
+                gameOn = false;
+            }
+            else if (livesplayer2 == 0)
+            {
+                fg.DrawString("PLAYER 1 WINS", titelFont, titelbrush, 290, 20);
+                gameOn = false;
+            }
 
             Refresh();
             #endregion        
@@ -190,6 +212,7 @@ namespace FinalDual
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
+            //any graphics on the game screen
             if (gameOn == true)
             {
                 e.Graphics.FillRectangle(player1Brush, 200, 0, 5, this.Width);
@@ -203,6 +226,7 @@ namespace FinalDual
 
         private void playButton_Click(object sender, EventArgs e)
         {
+            // sets up tank options
             #region Class Select Screen
             dualimage.Visible = false;
             playButton.Visible = false;
@@ -224,10 +248,9 @@ namespace FinalDual
             #endregion
         }
 
-       
-
         private void howToPlayButton_Click(object sender, EventArgs e)
         {
+            //instructions
             #region How to play screen
             //Graphics
             Graphics fg = this.CreateGraphics();
@@ -250,7 +273,7 @@ namespace FinalDual
         }
 
         private void menuButton_Click(object sender, EventArgs e)
-        {
+        {   //main menu 
             #region Return to Menu 
             Refresh();
             playButton.Visible = true;
@@ -275,6 +298,7 @@ namespace FinalDual
 
         private void startbutton_Click(object sender, EventArgs e)
         {
+            //starts the game
             #region Start Game
             gameOn = true;
             gametimer.Enabled = true;
@@ -285,7 +309,8 @@ namespace FinalDual
             chooselabel.Visible = false;
             player1label.Visible = false;
             player2label.Visible = false;
-                   
+            
+            //player 1 and 2 variables
             if (classPlayer2 == 2)
             {
                 fireratePlayer2 = 100;
