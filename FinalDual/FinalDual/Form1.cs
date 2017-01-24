@@ -126,6 +126,9 @@ namespace FinalDual
 
         private void gametimer_Tick(object sender, EventArgs e)
         {
+            Graphics fg = this.CreateGraphics();
+            SolidBrush titelbrush = new SolidBrush(Color.Black);
+            Font titelFont = new Font("Papyrus", 48, FontStyle.Regular);
             #region Check for movement and collisions 
             int xplayer1Temp = xPlayer1;
 
@@ -382,11 +385,13 @@ namespace FinalDual
             howToPlayButton.Visible = false;
             playButton.Visible = false;
             titleLabel.Visible = false;
-            fg.DrawString("How To Play", titelFont, titelbrush, 290, 20);
             chooselabel.Visible = false;
-            fg.DrawString("This is a 1v1 tank game, player 1 uses wasd and spacebar,\n  player 2 uses arrow keys and right control button. \n each player has 3 lives and can choose from 3 different tanks, \n each have different features listed in the play screen.\n First tank to destroy the other 3 times wins!", textFont, smallbrush, 175, 150);
             player1label.Visible = false;
-            player2label.Visible = false;        
+            player2label.Visible = false;
+            Refresh();
+            fg.DrawString("How To Play", titelFont, titelbrush, 290, 20);
+            fg.DrawString("This is a 1v1 tank game, player 1 uses wasd and spacebar,\n  player 2 uses arrow keys and right control button. \n each player has 3 lives and can choose from 3 different tanks, \n each have different features listed in the play screen.\n First tank to destroy the other 3 times wins!", textFont, smallbrush, 175, 150);
+
             #endregion
         }
 
