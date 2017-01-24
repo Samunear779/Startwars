@@ -159,7 +159,7 @@ namespace FinalDual
                     yPlayer2 = yPlayer2 - speedPlayer2;
                 }
             }
-
+             
 
             if (aplayer1 == true)
             {
