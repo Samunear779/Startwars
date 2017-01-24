@@ -31,19 +31,30 @@ namespace FinalDual
         int fireratePlayer2 = 500;
         int damagePlayer1 = 20;
         int damagePlayer2 = 20;
-        Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown,aplayer1,sPlayer1,dPlayer1,wPlayer1, gameOn;
-
-       
+        int x1Bullet = 10000;
+        int y1Bullet = 10000;
+        int x2Bullet = 10000;
+        int y2Bullet = 10000;
+        int bulletSpeed1 = 15;
+        int bulletSpeed2 = 15;
+        int counterPlayer1;
+        int counterPlayer2;
+        string directionPlayer1 = "right";
+        string directionPlayer2 = "left";
+        string directionB1;
+        string directionB2;
         
+        Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown, aplayer1, sPlayer1, dPlayer1, wPlayer1, gameOn, shootPlayer1, shootPlayer2;
+
         SolidBrush player1Brush = new SolidBrush(Color.Black);
         SolidBrush player2Brush = new SolidBrush(Color.White);
         SolidBrush blockBrush = new SolidBrush(Color.Gray);
-
+        SolidBrush bullet1Brush = new SolidBrush(Color.Red);
+        SolidBrush bullet2Brush = new SolidBrush(Color.LimeGreen);
 
         public Form1()
         {
-            InitializeComponent();
-             
+            InitializeComponent();            
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -76,9 +87,14 @@ namespace FinalDual
                 case Keys.D:
                     dPlayer1 = false;
                     break;
+                case Keys.Space:
+                    shootPlayer1 = false;
+                    break;
+                case Keys.RControlKey:
+                    shootPlayer2 = false;
+                    break;
                 default:
                     break;
-
             }
             #endregion
         }
@@ -112,7 +128,13 @@ namespace FinalDual
                     break;
                 case Keys.D:
                     dPlayer1 = true;
-                    break; 
+                    break;
+                case Keys.Space:
+                    shootPlayer1 = true;
+                    break;
+                case Keys.RControlKey:
+                    shootPlayer2 = true;
+                    break;
                 default:
                     break;
             }
@@ -121,9 +143,8 @@ namespace FinalDual
 
         private void gametimer_Tick(object sender, EventArgs e)         
         {
-            #region Check for movement and collisions 
+            #region Check for movement 
             int xplayer1Temp = xPlayer1;
-
             int yPlayer1Temp = yPlayer1;
             int xPlayer2Temp = xPlayer2;
             int yPlayer2Temp = yPlayer2;
@@ -192,7 +213,8 @@ namespace FinalDual
                     yPlayer1 = yPlayer1 - speedPlayer1;
                 }
             }
-            #region Collisions
+            #endregion 
+            #region Player 1 + 2 Collisions
 
             Rectangle recPlayer1 = new Rectangle(xPlayer1, yPlayer1, heightPlayer1, widthPlayer1);
             Rectangle recPlayer2 = new Rectangle(xPlayer2, yPlayer2, heightPlayer2, widthPlayer2);
@@ -293,6 +315,113 @@ namespace FinalDual
 
             Refresh();
             #endregion
+            #region Player 1 + 2 Firing 
+            
+            //player 1 bullet directions
+            if (dPlayer1 == true)
+            {
+                directionPlayer1 = "right";
+            }
+
+            if (wPlayer1 == true)
+            {
+                directionPlayer1 = "up";
+            }
+
+            if (aplayer1 == true)
+            {
+                directionPlayer1 = "left";
+            }
+
+            if (sPlayer1 == true)
+            {
+                directionPlayer1 = "down";
+            }
+
+            //Player 2 Bullet direction
+
+            if (rightArrowDown == true)
+            {
+                directionPlayer1 = "right";
+            }
+
+            if (upArrowDown == true)
+            {
+                directionPlayer1 = "up";
+            }
+
+            if (leftArrowDown == true)
+            {
+                directionPlayer1 = "left";
+            }
+
+            if (downArrowDown == true)
+            {
+                directionPlayer1 = "down";
+            }
+
+            //Player 1 shooting 
+            if (shootPlayer1 == true && (counterPlayer1 > 180))
+            {
+                x1Bullet = xPlayer1;
+                y1Bullet = yPlayer1;
+                counterPlayer1 = 0;
+                directionB1 = directionPlayer1;
+
+                if (directionB1 == "right")
+                {
+                    x1Bullet = x1Bullet + bulletSpeed1;
+                }
+
+                if (directionB1 == "up")
+                {
+                    y1Bullet = y1Bullet - bulletSpeed1;
+                }
+
+                if (directionB1 == "left")
+                {
+                    x1Bullet = x1Bullet - bulletSpeed1;
+                }
+
+                if (directionB1 == "down")
+                {
+                    y1Bullet = y1Bullet + bulletSpeed1;
+                }                
+            }
+
+            counterPlayer1++;
+
+            //Player 2 Shooting
+
+
+            if (shootPlayer1 == true && (counterPlayer1 > 180))
+            {
+                x2Bullet = xPlayer2;
+                y2Bullet = yPlayer2;
+                counterPlayer2 = 0;
+                directionB1 = directionPlayer1;
+
+                if (directionB2 == "right")
+                {
+                    x2Bullet = x2Bullet + bulletSpeed2;
+                }
+
+                if (directionB2 == "up")
+                {
+                    y2Bullet = y2Bullet - bulletSpeed2;
+                }
+
+                if (directionB2 == "left")
+                {
+                    x2Bullet = x2Bullet - bulletSpeed2;
+                }
+
+                if (directionB2 == "down")
+                {
+                    y2Bullet = y2Bullet + bulletSpeed2;
+                }                
+            }
+            counterPlayer2++;
             #endregion
         }
 
@@ -318,8 +447,9 @@ namespace FinalDual
                 //Draw Players 
                 e.Graphics.FillRectangle(player2Brush, xPlayer2, yPlayer2, widthPlayer2, heightPlayer2);
                 e.Graphics.FillRectangle(player1Brush, xPlayer1, yPlayer1, widthPlayer1, heightPlayer1);
-
-                
+                //Draw Bullets 
+                e.Graphics.FillRectangle(bullet2Brush, x2Bullet, y2Bullet, widthPlayer2 - 10, heightPlayer2 - 10);
+                e.Graphics.FillRectangle(bullet1Brush, x1Bullet, y1Bullet, widthPlayer1 - 10, heightPlayer1 - 10);
             }
             #endregion
         }
@@ -346,9 +476,7 @@ namespace FinalDual
             player2label.Visible = true;
             #endregion
         }
-
-       
-
+    
         private void howToPlayButton_Click(object sender, EventArgs e)
         {
             #region How to play screen
