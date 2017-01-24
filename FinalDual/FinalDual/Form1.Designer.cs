@@ -47,6 +47,8 @@
             this.chooselabel = new System.Windows.Forms.Label();
             this.player2label = new System.Windows.Forms.Label();
             this.player1label = new System.Windows.Forms.Label();
+            this.player2liveslabel = new System.Windows.Forms.Label();
+            this.player1liveslabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.juggernautpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glasscanonpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.normaltankpic)).BeginInit();
@@ -160,7 +162,7 @@
             // 
             this.normaltankpic.BackColor = System.Drawing.Color.IndianRed;
             this.normaltankpic.Image = global::FinalDual.Properties.Resources.images;
-            this.normaltankpic.Location = new System.Drawing.Point(45, 3);
+            this.normaltankpic.Location = new System.Drawing.Point(33, 12);
             this.normaltankpic.Name = "normaltankpic";
             this.normaltankpic.Size = new System.Drawing.Size(207, 176);
             this.normaltankpic.TabIndex = 9;
@@ -248,12 +250,36 @@
             this.player1label.Text = "Player 1 Select";
             this.player1label.Visible = false;
             // 
+            // player2liveslabel
+            // 
+            this.player2liveslabel.AutoSize = true;
+            this.player2liveslabel.BackColor = System.Drawing.Color.Transparent;
+            this.player2liveslabel.Location = new System.Drawing.Point(58, 9);
+            this.player2liveslabel.Name = "player2liveslabel";
+            this.player2liveslabel.Size = new System.Drawing.Size(44, 13);
+            this.player2liveslabel.TabIndex = 18;
+            this.player2liveslabel.Text = "Lives: 3";
+            this.player2liveslabel.Visible = false;
+            // 
+            // player1liveslabel
+            // 
+            this.player1liveslabel.AutoSize = true;
+            this.player1liveslabel.BackColor = System.Drawing.Color.Transparent;
+            this.player1liveslabel.Location = new System.Drawing.Point(869, 9);
+            this.player1liveslabel.Name = "player1liveslabel";
+            this.player1liveslabel.Size = new System.Drawing.Size(44, 13);
+            this.player1liveslabel.TabIndex = 19;
+            this.player1liveslabel.Text = "Lives: 3";
+            this.player1liveslabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(971, 475);
+            this.Controls.Add(this.player1liveslabel);
+            this.Controls.Add(this.player2liveslabel);
             this.Controls.Add(this.player1label);
             this.Controls.Add(this.player2label);
             this.Controls.Add(this.chooselabel);
@@ -306,6 +332,8 @@
         private System.Windows.Forms.Label chooselabel;
         private System.Windows.Forms.Label player2label;
         private System.Windows.Forms.Label player1label;
+        private System.Windows.Forms.Label player2liveslabel;
+        private System.Windows.Forms.Label player1liveslabel;
     }
 }
 

@@ -101,6 +101,15 @@ namespace FinalDual.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Kevin_MacLeod___Hitman {
+            get {
+                return ResourceManager.GetStream("Kevin_MacLeod___Hitman", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap swords {

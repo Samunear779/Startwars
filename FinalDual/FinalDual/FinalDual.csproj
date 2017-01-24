@@ -84,9 +84,6 @@
     <None Include="Resources\swords.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Kevin_MacLeod_-_Hitman.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\juggernaut.png" />
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +97,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\images %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kevin_MacLeod_-_Hitman.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

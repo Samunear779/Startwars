@@ -34,12 +34,14 @@ namespace FinalDual
         int damagePlayer2 = 20;
         int livesplayer1 = 3;
         int livesplayer2 = 3;
+
         Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown,aplayer1,sPlayer1,dPlayer1,wPlayer1, gameOn;
         
         SolidBrush player1Brush = new SolidBrush(Color.Black);
         SolidBrush player2Brush = new SolidBrush(Color.White);
         SolidBrush blockBrush = new SolidBrush(Color.Gray);
-
+        //sound player
+        
 
         public Form1()
         {
@@ -221,6 +223,10 @@ namespace FinalDual
         {
             if (gameOn == true)
             {
+                #region draw blocks
+                //player lives labels
+                player1liveslabel.Visible = true;
+                player2liveslabel.Visible = true;
                 //draw spawn areas 
                 e.Graphics.FillRectangle(player1Brush, 200, 0, 5, this.Width);
                 e.Graphics.FillRectangle(player2Brush, this.Width - 200, 0, 5, this.Height);
@@ -318,6 +324,11 @@ namespace FinalDual
 
         private void startbutton_Click(object sender, EventArgs e)
         {
+            //soundplayer
+            SoundPlayer song = new SoundPlayer(Properties.Resources.Kevin_MacLeod___Hitman);
+            song.Play();
+            //plays intense game music
+            song.Play();
             //starts the game
             #region Start Game
             gameOn = true;
