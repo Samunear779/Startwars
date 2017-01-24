@@ -92,7 +92,7 @@
             this.classSelect1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.classSelect1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.classSelect1.Font = new System.Drawing.Font("Papyrus", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classSelect1.Location = new System.Drawing.Point(179, 232);
+            this.classSelect1.Location = new System.Drawing.Point(178, 242);
             this.classSelect1.Name = "classSelect1";
             this.classSelect1.Size = new System.Drawing.Size(23, 26);
             this.classSelect1.TabIndex = 4;
@@ -103,7 +103,7 @@
             this.classSelect2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.classSelect2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.classSelect2.Font = new System.Drawing.Font("Papyrus", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classSelect2.Location = new System.Drawing.Point(768, 232);
+            this.classSelect2.Location = new System.Drawing.Point(768, 242);
             this.classSelect2.Name = "classSelect2";
             this.classSelect2.Size = new System.Drawing.Size(23, 26);
             this.classSelect2.TabIndex = 5;
@@ -179,10 +179,10 @@
             // glasscanonlable
             // 
             this.glasscanonlable.AutoSize = true;
-            this.glasscanonlable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.glasscanonlable.Font = new System.Drawing.Font("Papyrus", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.glasscanonlable.Location = new System.Drawing.Point(636, 197);
             this.glasscanonlable.Name = "glasscanonlable";
-            this.glasscanonlable.Size = new System.Drawing.Size(302, 32);
+            this.glasscanonlable.Size = new System.Drawing.Size(300, 42);
             this.glasscanonlable.TabIndex = 12;
             this.glasscanonlable.Text = "2.Glass Canon: light armored tank that moves fast,\r\n hits hard, but has very low " +
     "HP";
@@ -191,10 +191,10 @@
             // normaltanklabel
             // 
             this.normaltanklabel.AutoSize = true;
-            this.normaltanklabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.normaltanklabel.Font = new System.Drawing.Font("Papyrus", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.normaltanklabel.Location = new System.Drawing.Point(42, 197);
             this.normaltanklabel.Name = "normaltanklabel";
-            this.normaltanklabel.Size = new System.Drawing.Size(261, 32);
+            this.normaltanklabel.Size = new System.Drawing.Size(250, 42);
             this.normaltanklabel.TabIndex = 13;
             this.normaltanklabel.Text = "1.Normal: normal hp, damage, and speed. \r\nthis tank is the definition of average";
             this.normaltanklabel.Visible = false;
@@ -202,10 +202,10 @@
             // juggernautlable
             // 
             this.juggernautlable.AutoSize = true;
-            this.juggernautlable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.juggernautlable.Font = new System.Drawing.Font("Papyrus", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.juggernautlable.Location = new System.Drawing.Point(340, 154);
             this.juggernautlable.Name = "juggernautlable";
-            this.juggernautlable.Size = new System.Drawing.Size(287, 48);
+            this.juggernautlable.Size = new System.Drawing.Size(286, 63);
             this.juggernautlable.TabIndex = 14;
             this.juggernautlable.Text = "3. Juggernaut: a Heavy tank with a lot of hp and \r\ndamage but is very slow \r\n\r\n";
             this.juggernautlable.Visible = false;
@@ -218,10 +218,10 @@
             // chooselabel
             // 
             this.chooselabel.AutoSize = true;
-            this.chooselabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chooselabel.Location = new System.Drawing.Point(612, 412);
+            this.chooselabel.Font = new System.Drawing.Font("Papyrus", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chooselabel.Location = new System.Drawing.Point(612, 398);
             this.chooselabel.Name = "chooselabel";
-            this.chooselabel.Size = new System.Drawing.Size(355, 58);
+            this.chooselabel.Size = new System.Drawing.Size(343, 76);
             this.chooselabel.TabIndex = 15;
             this.chooselabel.Text = "Choose a class corisponding to \r\nthe number beside the class";
             this.chooselabel.Visible = false;
@@ -229,10 +229,10 @@
             // player2label
             // 
             this.player2label.AutoSize = true;
-            this.player2label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player2label.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.player2label.Location = new System.Drawing.Point(708, 285);
             this.player2label.Name = "player2label";
-            this.player2label.Size = new System.Drawing.Size(157, 25);
+            this.player2label.Size = new System.Drawing.Size(152, 33);
             this.player2label.TabIndex = 16;
             this.player2label.Text = "Player 2 Select";
             this.player2label.Visible = false;
@@ -240,10 +240,10 @@
             // player1label
             // 
             this.player1label.AutoSize = true;
-            this.player1label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player1label.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.player1label.Location = new System.Drawing.Point(122, 285);
             this.player1label.Name = "player1label";
-            this.player1label.Size = new System.Drawing.Size(157, 25);
+            this.player1label.Size = new System.Drawing.Size(152, 33);
             this.player1label.TabIndex = 17;
             this.player1label.Text = "Player 1 Select";
             this.player1label.Visible = false;
@@ -271,6 +271,7 @@
             this.Controls.Add(this.playButton);
             this.Controls.Add(this.howToPlayButton);
             this.Controls.Add(this.titleLabel);
+            this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
