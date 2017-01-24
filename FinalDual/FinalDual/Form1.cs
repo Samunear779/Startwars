@@ -125,15 +125,13 @@ namespace FinalDual
         }
 
         private void gametimer_Tick(object sender, EventArgs e)
-        {   
-            //graphics
-            Graphics fg = this.CreateGraphics();
-            SolidBrush smallbrush = new SolidBrush(Color.Black);
-            SolidBrush titelbrush = new SolidBrush(Color.Black);
-            Font titelFont = new Font("Papyrus", 48, FontStyle.Regular);
-            
-            // collision 
+        {
             #region Check for movement and collisions 
+            int xplayer1Temp = xPlayer1;
+
+            int yPlayer1Temp = yPlayer1;
+            int xPlayer2Temp = xPlayer2;
+            int yPlayer2Temp = yPlayer2;
 
             if (leftArrowDown == true)
             {
@@ -209,14 +207,108 @@ namespace FinalDual
                 fg.DrawString("PLAYER 1 WINS", titelFont, titelbrush, 290, 20);
                 gameOn = false;
             }
+            #region Collisions
 
-            //if(recPlayer1.IntersectsWith(Name of vaiable))
-            //{
+            Rectangle recPlayer1 = new Rectangle(xPlayer1, yPlayer1, heightPlayer1, widthPlayer1);
+            Rectangle recPlayer2 = new Rectangle(xPlayer2, yPlayer2, heightPlayer2, widthPlayer2);
+            Rectangle topLeftBlock = new Rectangle(275, 30, 50, 178);
+            Rectangle bottomLeftBlock = new Rectangle(275, 270, 50, 178);
+            Rectangle topRightBlock = new Rectangle(this.Width - 275, 30, 50, 178);
+            Rectangle bottomRightBlock = new Rectangle(this.Width - 275, 270, 50, 178);
+            Rectangle topBlock = new Rectangle(375, 30, 284, 50);
+            Rectangle bottomBlock = new Rectangle(375, 395, 284, 50);
+            Rectangle middleBlock = new Rectangle(492, 215, 50, 50);         
 
-            //}
+            if (recPlayer1.IntersectsWith(topLeftBlock))
+            {
+                xPlayer1 = xplayer1Temp;
+                yPlayer1 = yPlayer1Temp;
+            }
+
+            if (recPlayer1.IntersectsWith(bottomLeftBlock))
+            {
+                xPlayer1 = xplayer1Temp;
+                yPlayer1 = yPlayer1Temp;
+            }
+
+            if (recPlayer1.IntersectsWith(middleBlock))
+            {
+                xPlayer1 = xplayer1Temp;
+                yPlayer1 = yPlayer1Temp;
+            }
+
+            if (recPlayer1.IntersectsWith(topBlock))
+            {
+                xPlayer1 = xplayer1Temp;
+                yPlayer1 = yPlayer1Temp;
+            }
+
+            if (recPlayer1.IntersectsWith(bottomBlock))
+            {
+                xPlayer1 = xplayer1Temp;
+                yPlayer1 = yPlayer1Temp;
+            }
+
+            if (recPlayer1.IntersectsWith(topRightBlock))
+            {
+                xPlayer1 = xplayer1Temp;
+                yPlayer1 = yPlayer1Temp;
+            }
+
+            if (recPlayer1.IntersectsWith(bottomRightBlock))
+            {
+                xPlayer1 = xplayer1Temp;
+                yPlayer1 = yPlayer1Temp;
+            }
+
+            #region Player 2 Collisions
+            if (recPlayer2.IntersectsWith(topLeftBlock))
+            {
+                xPlayer2 = xPlayer2Temp;
+                yPlayer2 = yPlayer2Temp;
+            }
+
+            if (recPlayer2.IntersectsWith(bottomLeftBlock))
+            {
+                xPlayer2 = xPlayer2Temp;
+                yPlayer2 = yPlayer2Temp;
+            }
+
+            if (recPlayer2.IntersectsWith(middleBlock))
+            {
+                xPlayer2 = xPlayer2Temp;
+                yPlayer2 = yPlayer2Temp;
+            }
+
+            if (recPlayer2.IntersectsWith(topBlock))
+            {
+                xPlayer2 = xPlayer2Temp;
+                yPlayer2 = yPlayer2Temp;
+            }
+
+            if (recPlayer2.IntersectsWith(bottomBlock))
+            {
+                xPlayer2 = xPlayer2Temp;
+                yPlayer2 = yPlayer2Temp;
+            }
+
+            if (recPlayer2.IntersectsWith(topRightBlock))
+            {
+                xPlayer2 = xPlayer2Temp;
+                yPlayer2 = yPlayer2Temp;
+            }
+
+            if (recPlayer2.IntersectsWith(bottomRightBlock))
+            {
+                xPlayer2 = xPlayer2Temp;
+                yPlayer2 = yPlayer2Temp;
+            }
+
+            #endregion
 
             Refresh();
-            #endregion        
+            #endregion
+            #endregion
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
