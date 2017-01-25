@@ -98,6 +98,7 @@
             this.classSelect1.Name = "classSelect1";
             this.classSelect1.Size = new System.Drawing.Size(23, 26);
             this.classSelect1.TabIndex = 4;
+            this.classSelect1.Text = "1";
             this.classSelect1.Visible = false;
             // 
             // classSelect2
@@ -109,6 +110,7 @@
             this.classSelect2.Name = "classSelect2";
             this.classSelect2.Size = new System.Drawing.Size(23, 26);
             this.classSelect2.TabIndex = 5;
+            this.classSelect2.Text = "1\r\n";
             this.classSelect2.Visible = false;
             // 
             // menuButton
@@ -216,9 +218,9 @@
             this.chooselabel.Font = new System.Drawing.Font("Papyrus", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chooselabel.Location = new System.Drawing.Point(612, 377);
             this.chooselabel.Name = "chooselabel";
-            this.chooselabel.Size = new System.Drawing.Size(343, 76);
+            this.chooselabel.Size = new System.Drawing.Size(346, 76);
             this.chooselabel.TabIndex = 15;
-            this.chooselabel.Text = "Choose a class corisponding to \r\nthe number beside the class";
+            this.chooselabel.Text = "Insert the number corresponding\r\n to the class you want to select";
             this.chooselabel.Visible = false;
             // 
             // player2label
