@@ -101,6 +101,15 @@ namespace FinalDual.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream RuneScape_old_Theme__1___mp3cut_net_ {
+            get {
+                return ResourceManager.GetStream("RuneScape_old_Theme__1___mp3cut_net_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap swords {
@@ -117,6 +126,15 @@ namespace FinalDual.Properties {
             get {
                 object obj = ResourceManager.GetObject("tank10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Victory_Sound_Effect__mp3cut_net_ {
+            get {
+                return ResourceManager.GetStream("Victory_Sound_Effect__mp3cut_net_", resourceCulture);
             }
         }
     }

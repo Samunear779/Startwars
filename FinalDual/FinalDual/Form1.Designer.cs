@@ -36,7 +36,6 @@
             this.classSelect2 = new System.Windows.Forms.TextBox();
             this.menuButton = new System.Windows.Forms.Button();
             this.startbutton = new System.Windows.Forms.Button();
-            this.juggernautpic = new System.Windows.Forms.PictureBox();
             this.glasscanonpic = new System.Windows.Forms.PictureBox();
             this.normaltankpic = new System.Windows.Forms.PictureBox();
             this.dualimage = new System.Windows.Forms.PictureBox();
@@ -47,7 +46,10 @@
             this.chooselabel = new System.Windows.Forms.Label();
             this.player2label = new System.Windows.Forms.Label();
             this.player1label = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.juggernautpic)).BeginInit();
+            this.livesPlayer1Label = new System.Windows.Forms.Label();
+            this.livesPlayer2Label = new System.Windows.Forms.Label();
+            this.healthPlayer1Label = new System.Windows.Forms.Label();
+            this.healthPlayer2Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.glasscanonpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.normaltankpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dualimage)).BeginInit();
@@ -79,7 +81,7 @@
             // 
             this.playButton.BackColor = System.Drawing.Color.Silver;
             this.playButton.Font = new System.Drawing.Font("Papyrus", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playButton.Location = new System.Drawing.Point(673, 264);
+            this.playButton.Location = new System.Drawing.Point(656, 265);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(230, 62);
             this.playButton.TabIndex = 2;
@@ -92,7 +94,7 @@
             this.classSelect1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.classSelect1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.classSelect1.Font = new System.Drawing.Font("Papyrus", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classSelect1.Location = new System.Drawing.Point(178, 242);
+            this.classSelect1.Location = new System.Drawing.Point(768, 233);
             this.classSelect1.Name = "classSelect1";
             this.classSelect1.Size = new System.Drawing.Size(23, 26);
             this.classSelect1.TabIndex = 4;
@@ -103,7 +105,7 @@
             this.classSelect2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.classSelect2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.classSelect2.Font = new System.Drawing.Font("Papyrus", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classSelect2.Location = new System.Drawing.Point(768, 242);
+            this.classSelect2.Location = new System.Drawing.Point(768, 333);
             this.classSelect2.Name = "classSelect2";
             this.classSelect2.Size = new System.Drawing.Size(23, 26);
             this.classSelect2.TabIndex = 5;
@@ -126,30 +128,19 @@
             // 
             this.startbutton.BackColor = System.Drawing.Color.Silver;
             this.startbutton.Font = new System.Drawing.Font("Papyrus", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startbutton.Location = new System.Drawing.Point(376, 412);
+            this.startbutton.Location = new System.Drawing.Point(383, 412);
             this.startbutton.Name = "startbutton";
-            this.startbutton.Size = new System.Drawing.Size(230, 62);
+            this.startbutton.Size = new System.Drawing.Size(223, 62);
             this.startbutton.TabIndex = 8;
             this.startbutton.Text = "Start ";
             this.startbutton.UseVisualStyleBackColor = false;
             this.startbutton.Visible = false;
             this.startbutton.Click += new System.EventHandler(this.startbutton_Click);
             // 
-            // juggernautpic
-            // 
-            this.juggernautpic.BackColor = System.Drawing.Color.White;
-            this.juggernautpic.Image = global::FinalDual.Properties.Resources.images__1_;
-            this.juggernautpic.Location = new System.Drawing.Point(390, 197);
-            this.juggernautpic.Name = "juggernautpic";
-            this.juggernautpic.Size = new System.Drawing.Size(216, 193);
-            this.juggernautpic.TabIndex = 11;
-            this.juggernautpic.TabStop = false;
-            this.juggernautpic.Visible = false;
-            // 
             // glasscanonpic
             // 
             this.glasscanonpic.Image = global::FinalDual.Properties.Resources.download;
-            this.glasscanonpic.Location = new System.Drawing.Point(660, 3);
+            this.glasscanonpic.Location = new System.Drawing.Point(673, 3);
             this.glasscanonpic.Name = "glasscanonpic";
             this.glasscanonpic.Size = new System.Drawing.Size(228, 186);
             this.glasscanonpic.TabIndex = 10;
@@ -160,7 +151,7 @@
             // 
             this.normaltankpic.BackColor = System.Drawing.Color.IndianRed;
             this.normaltankpic.Image = global::FinalDual.Properties.Resources.images;
-            this.normaltankpic.Location = new System.Drawing.Point(45, 3);
+            this.normaltankpic.Location = new System.Drawing.Point(85, 3);
             this.normaltankpic.Name = "normaltankpic";
             this.normaltankpic.Size = new System.Drawing.Size(207, 176);
             this.normaltankpic.TabIndex = 9;
@@ -179,35 +170,39 @@
             // glasscanonlable
             // 
             this.glasscanonlable.AutoSize = true;
-            this.glasscanonlable.Font = new System.Drawing.Font("Papyrus", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.glasscanonlable.Location = new System.Drawing.Point(636, 197);
+            this.glasscanonlable.BackColor = System.Drawing.Color.Transparent;
+            this.glasscanonlable.Font = new System.Drawing.Font("Papyrus", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.glasscanonlable.Location = new System.Drawing.Point(26, 265);
             this.glasscanonlable.Name = "glasscanonlable";
-            this.glasscanonlable.Size = new System.Drawing.Size(300, 42);
+            this.glasscanonlable.Size = new System.Drawing.Size(354, 50);
             this.glasscanonlable.TabIndex = 12;
-            this.glasscanonlable.Text = "2.Glass Canon: light armored tank that moves fast,\r\n hits hard, but has very low " +
-    "HP";
+            this.glasscanonlable.Text = "2. Glass Canon: light armored tank that moves fast,\r\n hits hard, but has very low" +
+    " hp\r\n";
             this.glasscanonlable.Visible = false;
             // 
             // normaltanklabel
             // 
             this.normaltanklabel.AutoSize = true;
-            this.normaltanklabel.Font = new System.Drawing.Font("Papyrus", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.normaltanklabel.Location = new System.Drawing.Point(42, 197);
+            this.normaltanklabel.BackColor = System.Drawing.Color.Transparent;
+            this.normaltanklabel.Font = new System.Drawing.Font("Papyrus", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.normaltanklabel.Location = new System.Drawing.Point(26, 197);
             this.normaltanklabel.Name = "normaltanklabel";
-            this.normaltanklabel.Size = new System.Drawing.Size(250, 42);
+            this.normaltanklabel.Size = new System.Drawing.Size(287, 50);
             this.normaltanklabel.TabIndex = 13;
-            this.normaltanklabel.Text = "1.Normal: normal hp, damage, and speed. \r\nthis tank is the definition of average";
+            this.normaltanklabel.Text = "1. Normal: normal hp, damage, and speed. \r\nthis tank is the definition of average" +
+    "";
             this.normaltanklabel.Visible = false;
             // 
             // juggernautlable
             // 
             this.juggernautlable.AutoSize = true;
-            this.juggernautlable.Font = new System.Drawing.Font("Papyrus", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.juggernautlable.Location = new System.Drawing.Point(340, 154);
+            this.juggernautlable.BackColor = System.Drawing.Color.Transparent;
+            this.juggernautlable.Font = new System.Drawing.Font("Papyrus", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.juggernautlable.Location = new System.Drawing.Point(26, 330);
             this.juggernautlable.Name = "juggernautlable";
-            this.juggernautlable.Size = new System.Drawing.Size(286, 63);
+            this.juggernautlable.Size = new System.Drawing.Size(338, 75);
             this.juggernautlable.TabIndex = 14;
-            this.juggernautlable.Text = "3. Juggernaut: a Heavy tank with a lot of hp and \r\ndamage but is very slow \r\n\r\n";
+            this.juggernautlable.Text = "3.  Juggernaut: a Heavy tank with a lot of hp and \r\ndamage but is very slow \r\n\r\n";
             this.juggernautlable.Visible = false;
             // 
             // gametimer
@@ -219,7 +214,7 @@
             // 
             this.chooselabel.AutoSize = true;
             this.chooselabel.Font = new System.Drawing.Font("Papyrus", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chooselabel.Location = new System.Drawing.Point(612, 398);
+            this.chooselabel.Location = new System.Drawing.Point(612, 377);
             this.chooselabel.Name = "chooselabel";
             this.chooselabel.Size = new System.Drawing.Size(343, 76);
             this.chooselabel.TabIndex = 15;
@@ -230,7 +225,7 @@
             // 
             this.player2label.AutoSize = true;
             this.player2label.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player2label.Location = new System.Drawing.Point(708, 285);
+            this.player2label.Location = new System.Drawing.Point(708, 294);
             this.player2label.Name = "player2label";
             this.player2label.Size = new System.Drawing.Size(152, 33);
             this.player2label.TabIndex = 16;
@@ -241,12 +236,60 @@
             // 
             this.player1label.AutoSize = true;
             this.player1label.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player1label.Location = new System.Drawing.Point(122, 285);
+            this.player1label.Location = new System.Drawing.Point(708, 197);
             this.player1label.Name = "player1label";
             this.player1label.Size = new System.Drawing.Size(152, 33);
             this.player1label.TabIndex = 17;
             this.player1label.Text = "Player 1 Select";
             this.player1label.Visible = false;
+            // 
+            // livesPlayer1Label
+            // 
+            this.livesPlayer1Label.AutoSize = true;
+            this.livesPlayer1Label.BackColor = System.Drawing.Color.Transparent;
+            this.livesPlayer1Label.Font = new System.Drawing.Font("Papyrus", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.livesPlayer1Label.Location = new System.Drawing.Point(2, 3);
+            this.livesPlayer1Label.Name = "livesPlayer1Label";
+            this.livesPlayer1Label.Size = new System.Drawing.Size(144, 38);
+            this.livesPlayer1Label.TabIndex = 18;
+            this.livesPlayer1Label.Text = "Label Lives ";
+            this.livesPlayer1Label.Visible = false;
+            // 
+            // livesPlayer2Label
+            // 
+            this.livesPlayer2Label.AutoSize = true;
+            this.livesPlayer2Label.BackColor = System.Drawing.Color.Transparent;
+            this.livesPlayer2Label.Font = new System.Drawing.Font("Papyrus", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.livesPlayer2Label.Location = new System.Drawing.Point(827, 3);
+            this.livesPlayer2Label.Name = "livesPlayer2Label";
+            this.livesPlayer2Label.Size = new System.Drawing.Size(144, 38);
+            this.livesPlayer2Label.TabIndex = 19;
+            this.livesPlayer2Label.Text = "Label Lives ";
+            this.livesPlayer2Label.Visible = false;
+            // 
+            // healthPlayer1Label
+            // 
+            this.healthPlayer1Label.AutoSize = true;
+            this.healthPlayer1Label.BackColor = System.Drawing.Color.Transparent;
+            this.healthPlayer1Label.Font = new System.Drawing.Font("Papyrus", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.healthPlayer1Label.Location = new System.Drawing.Point(2, 41);
+            this.healthPlayer1Label.Name = "healthPlayer1Label";
+            this.healthPlayer1Label.Size = new System.Drawing.Size(144, 38);
+            this.healthPlayer1Label.TabIndex = 20;
+            this.healthPlayer1Label.Text = "Label Lives ";
+            this.healthPlayer1Label.Visible = false;
+            // 
+            // healthPlayer2Label
+            // 
+            this.healthPlayer2Label.AutoSize = true;
+            this.healthPlayer2Label.BackColor = System.Drawing.Color.Transparent;
+            this.healthPlayer2Label.Font = new System.Drawing.Font("Papyrus", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.healthPlayer2Label.Location = new System.Drawing.Point(827, 41);
+            this.healthPlayer2Label.Name = "healthPlayer2Label";
+            this.healthPlayer2Label.Size = new System.Drawing.Size(145, 38);
+            this.healthPlayer2Label.TabIndex = 21;
+            this.healthPlayer2Label.Text = "Health: 200";
+            this.healthPlayer2Label.Visible = false;
             // 
             // Form1
             // 
@@ -254,13 +297,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(971, 475);
+            this.Controls.Add(this.healthPlayer2Label);
+            this.Controls.Add(this.healthPlayer1Label);
+            this.Controls.Add(this.livesPlayer2Label);
+            this.Controls.Add(this.livesPlayer1Label);
             this.Controls.Add(this.player1label);
             this.Controls.Add(this.player2label);
             this.Controls.Add(this.chooselabel);
             this.Controls.Add(this.juggernautlable);
             this.Controls.Add(this.normaltanklabel);
             this.Controls.Add(this.glasscanonlable);
-            this.Controls.Add(this.juggernautpic);
             this.Controls.Add(this.glasscanonpic);
             this.Controls.Add(this.normaltankpic);
             this.Controls.Add(this.startbutton);
@@ -277,7 +323,6 @@
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
-            ((System.ComponentModel.ISupportInitialize)(this.juggernautpic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glasscanonpic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.normaltankpic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dualimage)).EndInit();
@@ -298,7 +343,6 @@
         private System.Windows.Forms.Button startbutton;
         private System.Windows.Forms.PictureBox normaltankpic;
         private System.Windows.Forms.PictureBox glasscanonpic;
-        private System.Windows.Forms.PictureBox juggernautpic;
         private System.Windows.Forms.Label glasscanonlable;
         private System.Windows.Forms.Label normaltanklabel;
         private System.Windows.Forms.Label juggernautlable;
@@ -306,6 +350,10 @@
         private System.Windows.Forms.Label chooselabel;
         private System.Windows.Forms.Label player2label;
         private System.Windows.Forms.Label player1label;
+        private System.Windows.Forms.Label livesPlayer1Label;
+        private System.Windows.Forms.Label livesPlayer2Label;
+        private System.Windows.Forms.Label healthPlayer1Label;
+        private System.Windows.Forms.Label healthPlayer2Label;
     }
 }
 

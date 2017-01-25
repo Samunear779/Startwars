@@ -25,36 +25,43 @@ namespace FinalDual
         int widthPlayer2 = 20;
         int heightPlayer1 = 20;
         int heightPlayer2 = 20;
-        int healthplayer1 = 200;
-        int healthplayer2 = 200;
-        int fireratePlayer1 = 500;
-        int fireratePlayer2 = 500;
-        int damagePlayer1 = 20;
-        int damagePlayer2 = 20;
+        int healthPlayer1 = 200;
+        int healthPlayer2 = 200;
+        int fireratePlayer1 = 60;
+        int fireratePlayer2 = 60;
+        int damagePlayer1 = 50;
+        int damagePlayer2 = 50;
         int x1Bullet = 10000;
         int y1Bullet = 10000;
         int x2Bullet = 10000;
         int y2Bullet = 10000;
         int bulletSpeed1 = 15;
         int bulletSpeed2 = 15;
-        int counterPlayer1;
-        int counterPlayer2;
+        int livesPlayer1 = 3;
+        int livesPlayer2 = 3;
         string directionPlayer1 = "right";
         string directionPlayer2 = "left";
         string directionB1;
-        string directionB2;
-        
+        string directionB2;       
         Boolean leftArrowDown, downArrowDown, rightArrowDown, upArrowDown, aplayer1, sPlayer1, dPlayer1, wPlayer1, gameOn, shootPlayer1, shootPlayer2;
 
+        SoundPlayer themeSong = new SoundPlayer(Properties.Resources.RuneScape_old_Theme__1___mp3cut_net_);
+        SoundPlayer victorySong = new SoundPlayer(Properties.Resources.Victory_Sound_Effect__mp3cut_net_);
         SolidBrush player1Brush = new SolidBrush(Color.Black);
         SolidBrush player2Brush = new SolidBrush(Color.White);
         SolidBrush blockBrush = new SolidBrush(Color.Gray);
         SolidBrush bullet1Brush = new SolidBrush(Color.Red);
         SolidBrush bullet2Brush = new SolidBrush(Color.LimeGreen);
+        SolidBrush titelbrush = new SolidBrush(Color.Black);
+        SolidBrush smallbrush = new SolidBrush(Color.Black);
+        Pen redpen = new Pen(Color.Red, 10);
+        Font titelFont = new Font("Papyrus", 48, FontStyle.Regular);
+        Font textFont = new Font("Papyrus", 20, FontStyle.Regular);
 
         public Form1()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            themeSong.PlayLooping();      
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -90,7 +97,7 @@ namespace FinalDual
                 case Keys.Space:
                     shootPlayer1 = false;
                     break;
-                case Keys.RControlKey:
+                case Keys.L:
                     shootPlayer2 = false;
                     break;
                 default:
@@ -132,7 +139,7 @@ namespace FinalDual
                 case Keys.Space:
                     shootPlayer1 = true;
                     break;
-                case Keys.RControlKey:
+                case Keys.L:
                     shootPlayer2 = true;
                     break;
                 default:
@@ -216,6 +223,8 @@ namespace FinalDual
             #endregion 
             #region Player 1 + 2 Collisions
 
+            Rectangle recPlayer1Bullet = new Rectangle(x1Bullet, y1Bullet, widthPlayer1 - 20, heightPlayer1 - 20);
+            Rectangle recPlayer2Bullet = new Rectangle(x2Bullet, y2Bullet, widthPlayer2 - 20, heightPlayer2 - 20);
             Rectangle recPlayer1 = new Rectangle(xPlayer1, yPlayer1, heightPlayer1, widthPlayer1);
             Rectangle recPlayer2 = new Rectangle(xPlayer2, yPlayer2, heightPlayer2, widthPlayer2);
             Rectangle topLeftBlock = new Rectangle(275, 30, 50, 178);
@@ -361,73 +370,145 @@ namespace FinalDual
             }
 
             //Player 1 shooting 
-            if (shootPlayer1 == true && (counterPlayer1 > 180))
+            if (shootPlayer1 == true && (fireratePlayer1 > 60))
             {
                 x1Bullet = xPlayer1;
                 y1Bullet = yPlayer1;
-                counterPlayer1 = 0;
+                fireratePlayer1 = 0;
                 directionB1 = directionPlayer1;
-
-                if (directionB1 == "right")
-                {
-                    x1Bullet = x1Bullet + bulletSpeed1;
-                }
-
-                if (directionB1 == "up")
-                {
-                    y1Bullet = y1Bullet - bulletSpeed1;
-                }
-
-                if (directionB1 == "left")
-                {
-                    x1Bullet = x1Bullet - bulletSpeed1;
-                }
-
-                if (directionB1 == "down")
-                {
-                    y1Bullet = y1Bullet + bulletSpeed1;
-                }                
+              
             }
 
-            counterPlayer1++;
+            fireratePlayer1++;
+
+
+            if (directionB1 == "right")
+            {
+                x1Bullet = x1Bullet + bulletSpeed1;
+            }
+
+            if (directionB1 == "up")
+            {
+                y1Bullet = y1Bullet - bulletSpeed1;
+            }
+
+            if (directionB1 == "left")
+            {
+                x1Bullet = x1Bullet - bulletSpeed1;
+            }
+
+            if (directionB1 == "down")
+            {
+                y1Bullet = y1Bullet + bulletSpeed1;
+            }
 
             //Player 2 Shooting
 
 
-            if (shootPlayer1 == true && (counterPlayer1 > 180))
+            if (shootPlayer2 == true && (fireratePlayer2 > 60))
             {
                 x2Bullet = xPlayer2;
                 y2Bullet = yPlayer2;
-                counterPlayer2 = 0;
-                directionB1 = directionPlayer1;
+                fireratePlayer2 = 0;
+                directionB2 = directionPlayer2;
 
-                if (directionB2 == "right")
-                {
-                    x2Bullet = x2Bullet + bulletSpeed2;
-                }
-
-                if (directionB2 == "up")
-                {
-                    y2Bullet = y2Bullet - bulletSpeed2;
-                }
-
-                if (directionB2 == "left")
-                {
-                    x2Bullet = x2Bullet - bulletSpeed2;
-                }
-
-                if (directionB2 == "down")
-                {
-                    y2Bullet = y2Bullet + bulletSpeed2;
-                }                
+                            
             }
-            counterPlayer2++;
+
+            if (directionB2 == "right")
+            {
+                x2Bullet = x2Bullet + bulletSpeed2;
+            }
+
+            if (directionB2 == "up")
+            {
+                y2Bullet = y2Bullet - bulletSpeed2;
+            }
+
+            if (directionB2 == "left")
+            {
+                x2Bullet = x2Bullet - bulletSpeed2;
+            }
+
+            if (directionB2 == "down")
+            {
+                y2Bullet = y2Bullet + bulletSpeed2;
+            }
+            fireratePlayer2++;
+            #endregion
+            #region Bullet Collision 
+
+            if (recPlayer1.IntersectsWith(recPlayer2Bullet))
+            {
+                x2Bullet = 10000;
+                y2Bullet = 10000;
+
+                healthPlayer1 = healthPlayer1 - damagePlayer2;
+
+                if (healthPlayer1 <= 0)
+                {
+                    livesPlayer1--;
+                    if (classPlayer1 == 1)
+                    {
+                        healthPlayer1 = 200;
+                    }
+
+                    else if(classPlayer1 == 2)
+                    {
+                        healthPlayer1 = 100;
+                    }
+
+                    else if(classPlayer1 == 3)
+                    {
+                        healthPlayer1 = 300;
+                    }
+
+                    xPlayer1 = 50;
+                    yPlayer1 = 245;
+                }
+            }
+
+            if (recPlayer2.IntersectsWith(recPlayer1Bullet))
+            {
+                x1Bullet = 10000;
+                y1Bullet = 10000;
+
+                healthPlayer2 = healthPlayer2 - damagePlayer1;
+
+                if (healthPlayer2 <= 0)
+                {
+                    livesPlayer2--;
+                    if (classPlayer2 == 1)
+                    {
+                        healthPlayer2 = 200;
+                    }
+
+                    else if (classPlayer2 == 2)
+                    {
+                        healthPlayer2 = 100;
+                    }
+
+                    else if(classPlayer2 == 3)
+                    {
+                        healthPlayer2 = 300;
+                    }
+                    xPlayer2 = 900;
+                    yPlayer2 = 245;
+                }
+            }
+
+            livesPlayer1Label.Text = "Lives:" + livesPlayer1;
+            healthPlayer1Label.Text = "Health:" + healthPlayer1;
+            livesPlayer2Label.Text = "Lives:" + livesPlayer2;
+            healthPlayer2Label.Text = "Health:" + healthPlayer2;
+
             #endregion
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             #region Draw Players and graphics 
+
             if (gameOn == true)
             {
                 //draw spawn areas 
@@ -450,6 +531,31 @@ namespace FinalDual
                 //Draw Bullets 
                 e.Graphics.FillRectangle(bullet2Brush, x2Bullet, y2Bullet, widthPlayer2 - 10, heightPlayer2 - 10);
                 e.Graphics.FillRectangle(bullet1Brush, x1Bullet, y1Bullet, widthPlayer1 - 10, heightPlayer1 - 10);
+
+                if(livesPlayer1 == 0)
+                {
+                    themeSong.Stop();
+                    e.Graphics.Clear(Color.IndianRed);
+                    e.Graphics.DrawString("PLAYER TWO WINS", titelFont, smallbrush, 125, 200);
+                    livesPlayer1Label.Visible = false;
+                    healthPlayer1Label.Visible = false;
+                    livesPlayer2Label.Visible = false;
+                    healthPlayer2Label.Visible = false;
+                    victorySong.Play();
+                }
+
+                else if(livesPlayer2 == 0)
+                {
+                    themeSong.Stop();
+                    e.Graphics.Clear(Color.IndianRed);
+                    e.Graphics.DrawString("PLAYER ONE WINS", titelFont, smallbrush, 125, 200);
+                    livesPlayer2Label.Visible = false;
+                    healthPlayer2Label.Visible = false;
+                    livesPlayer1Label.Visible = false;
+                    healthPlayer1Label.Visible = false;
+                    victorySong.Play();
+                }
+
             }
             #endregion
         }
@@ -457,7 +563,7 @@ namespace FinalDual
         private void playButton_Click(object sender, EventArgs e)
         {
             #region Class Select Screen
-            dualimage.Visible = false;
+        
             playButton.Visible = false;
             howToPlayButton.Visible = false;
             menuButton.Visible = true;
@@ -466,8 +572,6 @@ namespace FinalDual
             startbutton.Visible = true;
             normaltankpic.Visible = true;
             glasscanonpic.Visible = true;
-            juggernautpic.Visible = true;
-            dualimage.Visible = false;
             glasscanonlable.Visible = true;
             normaltanklabel.Visible = true;
             juggernautlable.Visible = true;
@@ -482,21 +586,16 @@ namespace FinalDual
             #region How to play screen
             //Graphics
             Graphics fg = this.CreateGraphics();
-            Pen redpen = new Pen(Color.Red, 10);
-            SolidBrush titelbrush = new SolidBrush(Color.Black);
-            SolidBrush smallbrush = new SolidBrush(Color.Black);
-            Font titelFont = new Font("Papyrus", 48, FontStyle.Regular);
-            Font textFont = new Font("Papyrus", 20, FontStyle.Regular);
             menuButton.Visible = true;
             dualimage.Visible = false;
             howToPlayButton.Visible = false;
             playButton.Visible = false;
-            titleLabel.Visible = false;
-            fg.DrawString("How To Play", titelFont, titelbrush, 290, 20);
-            chooselabel.Visible = false;
-            fg.DrawString("This is a 1v1 tank game, player 1 uses wasd and spacebar,\n  player 2 uses arrow keys and right control button. \n each player has 3 lives and can choose from 3 different tanks, \n each have different features listed in the play screen.\n First tank to destroy the other 3 times wins!", textFont, smallbrush, 175, 150);
+            titleLabel.Visible = false;          
+            chooselabel.Visible = false;           
             player1label.Visible = false;
-            player2label.Visible = false;        
+            player2label.Visible = false;
+            fg.DrawString("How To Play", titelFont, titelbrush, 290, 20);
+            fg.DrawString("This is a 1v1 tank game, player 1 uses wasd and spacebar,\n  player 2 uses arrow keys and right control button. \n each player has 3 lives and can choose from 3 different tanks, \n each have different features listed in the play screen.\n First tank to destroy the other 3 times wins!", textFont, smallbrush, 175, 150);
             #endregion
         }
 
@@ -512,7 +611,6 @@ namespace FinalDual
             startbutton.Visible = false;
             normaltankpic.Visible = false;
             glasscanonpic.Visible = false;
-            juggernautpic.Visible = false;
             glasscanonlable.Visible = false;
             normaltanklabel.Visible = false;
             juggernautlable.Visible = false;
@@ -532,46 +630,50 @@ namespace FinalDual
             gametimer.Start();     
             classPlayer1 = Convert.ToInt32(classSelect1.Text);
             classPlayer2 = Convert.ToInt32(classSelect2.Text);
+            dualimage.Visible = false;
             startbutton.Visible = false;
             chooselabel.Visible = false;
             player1label.Visible = false;
             player2label.Visible = false;
+            livesPlayer1Label.Visible = true;
+            livesPlayer2Label.Visible = true;
+            healthPlayer1Label.Visible = true;
+            healthPlayer2Label.Visible = true;
                    
             if (classPlayer2 == 2)
             {
-                fireratePlayer2 = 100;
-                healthplayer2 = 100;
-                damagePlayer2 = 10;
+                fireratePlayer2 = 40;
+                healthPlayer2 = 100;
+                damagePlayer2 = 100;
                 speedPlayer2 = 10;
             }
 
             else if (classPlayer2 == 3)
             {
-                fireratePlayer2 = 1000;
-                healthplayer2 = 300;
-                damagePlayer2 = 50;
+                fireratePlayer2 = 120;
+                healthPlayer2 = 300;
+                damagePlayer2 = 200;
                 speedPlayer2 = 5;
             }
 
              if (classPlayer1 == 2)
             {
-                fireratePlayer2 = 100;
-                healthplayer2 = 100;
-                damagePlayer2 = 10;
+                fireratePlayer1 = 40;
+                healthPlayer1 = 100;
+                damagePlayer1 = 100;
                 speedPlayer1 = 10;
             }
 
             else if (classPlayer1 == 3)
             {
-                fireratePlayer2 = 1000;
-                healthplayer2 = 300;
-                damagePlayer2 = 50;
+                fireratePlayer1 = 120;
+                healthPlayer1 = 300;
+                damagePlayer1 = 200;
                 speedPlayer1 = 5;
             }
                    
             titleLabel.Visible = false;
             juggernautlable.Visible = false;
-            juggernautpic.Visible = false;
             normaltanklabel.Visible = false;
             normaltankpic.Visible = false;
             glasscanonlable.Visible = false;
