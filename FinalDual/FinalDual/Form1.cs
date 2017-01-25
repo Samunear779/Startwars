@@ -10,9 +10,11 @@ using System.Windows.Forms;
 using System.Media;
 
 namespace FinalDual
+    //Dual by: Sam and Nathan
 {
     public partial class Form1 : Form
     {
+        //declare variables and make brushes and stuff
         int classPlayer1 = 0;
         int classPlayer2 = 0;
         int xPlayer1 = 50;
@@ -60,12 +62,14 @@ namespace FinalDual
 
         public Form1()
         {
+            //play song 
             InitializeComponent();
             themeSong.PlayLooping();      
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
+            //Sets key up presses 
             #region Player2 Key Up
             //check to see if a key has been released and set its KeyDown value to false if it has
             switch (e.KeyCode)
@@ -114,6 +118,7 @@ namespace FinalDual
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            //sets key down presses 
             #region Player2 Key Down 
             //check to see if a key is pressed and set is KeyDown value to true if it has
             switch (e.KeyCode)
@@ -162,6 +167,7 @@ namespace FinalDual
 
         private void gametimer_Tick(object sender, EventArgs e)         
         {
+            //checks for movements 
             #region Check for movement 
             int xplayer1Temp = xPlayer1;
             int yPlayer1Temp = yPlayer1;
@@ -233,6 +239,7 @@ namespace FinalDual
                 }
             }
             #endregion
+            //fires bullets and determines direction 
             #region Player 1 + 2 Firing 
 
             //player 1 bullet directions
@@ -345,6 +352,7 @@ namespace FinalDual
             }
             fireratePlayer2++;
             #endregion
+            //Collisions for players and bullets 
             #region Player 1 + 2 Collisions
 
             Rectangle recPlayer1Bullet = new Rectangle(x1Bullet, y1Bullet, widthPlayer1 - 20, heightPlayer1 - 20);
@@ -606,6 +614,7 @@ namespace FinalDual
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
+            //draw players and bullets and all the stuff
             #region Draw Players and graphics 
 
             if (gameOn == true)
@@ -644,7 +653,7 @@ namespace FinalDual
 
                     if (resetButton == true)
                     {
-                        Refresh();
+                        Refresh();          
                         playButton.Visible = true;
                         howToPlayButton.Visible = true;
                         menuButton.Visible = false;
@@ -721,6 +730,7 @@ namespace FinalDual
 
         private void playButton_Click(object sender, EventArgs e)
         {
+            //moves to class select screen 
             #region Class Select Screen
         
             playButton.Visible = false;
@@ -742,6 +752,7 @@ namespace FinalDual
     
         private void howToPlayButton_Click(object sender, EventArgs e)
         {
+            //shows how to player screen
             #region How to play screen
             //Graphics
             Graphics fg = this.CreateGraphics();
@@ -761,6 +772,7 @@ namespace FinalDual
 
         private void menuButton_Click(object sender, EventArgs e)
         {
+            //returns to the menu 
             #region Return to Menu 
             Refresh();
             playButton.Visible = true;
@@ -785,6 +797,7 @@ namespace FinalDual
 
         private void startbutton_Click(object sender, EventArgs e)
         {
+            //starts the game 
             #region Start Game
             gameOn = true;
             gametimer.Enabled = true;
@@ -800,6 +813,14 @@ namespace FinalDual
             livesPlayer2Label.Visible = true;
             healthPlayer1Label.Visible = true;
             healthPlayer2Label.Visible = true;
+            livesPlayer1 = 3;
+            livesPlayer2 = 3;
+            classSelect1.Text = "1";
+            classSelect2.Text = "1";
+            xPlayer1 = 50;
+            xPlayer2 = 900;
+            yPlayer1 = 245;
+            yPlayer2 = 245;
                    
             if (classPlayer2 == 2)
             {
