@@ -84,6 +84,9 @@
     <None Include="Resources\swords.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Kevin_MacLeod_-_Hitman.wav" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\juggernaut.png" />
   </ItemGroup>
   <ItemGroup>
@@ -99,7 +102,16 @@
     <None Include="Resources\images %281%29.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Kevin_MacLeod_-_Hitman.wav" />
+    <None Include="Resources\Minecraft Theme song %28mp3cut.net%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RuneScape old Theme %281%29 %28mp3cut.net%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Victory Sound Effect %28mp3cut.net%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RuneScape - Barbarianism %28remastered%29 %28mp3cut.net%29.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
